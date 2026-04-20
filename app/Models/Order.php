@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use App\Models\Concerns\BelongsToTenant;
+use App\Models\Concerns\HasComments;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Order extends Model
 {
+    use BelongsToTenant, HasComments;
+
     protected $guarded = ['id'];
 
     protected function casts(): array
@@ -24,16 +27,6 @@ class Order extends Model
             'evidence' => 'array',
             'is_hidden' => 'boolean',
         ];
-    }
-
-    public function tenant(): BelongsTo
-    {
-        return $this->belongsTo(Tenant::class);
-    }
-
-    public function comments(): MorphMany
-    {
-        return $this->morphMany(Comment::class, 'commentable');
     }
 
     public function emailLogs(): MorphMany
