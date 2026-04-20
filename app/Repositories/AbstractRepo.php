@@ -88,7 +88,8 @@ abstract class AbstractRepo
         $data = $this->beforeCreate($data);
 
         $item = $this->model->create($data);
-        return $this->mapItem($item);
+        // Refresh to pick up DB-side defaults (useCurrent, enum defaults) and eager-load configured relations.
+        return $this->mapItem($item->fresh($this->withRelations));
     }
 
     public function beforeCreate($data)
@@ -107,7 +108,7 @@ abstract class AbstractRepo
         $data = $this->beforeUpdate($data, $item);
         $item->update($data);
 
-        return $this->mapItem($item->fresh());
+        return $this->mapItem($item->fresh($this->withRelations));
     }
 
     public function beforeUpdate($data, $item = null)
@@ -172,7 +173,7 @@ abstract class AbstractRepo
 
         return [
             'items' => $itemsMapped,
-            'Model' => $items
+            'Model' => $items,
         ];
     }
 
@@ -184,7 +185,7 @@ abstract class AbstractRepo
 
         return [
             'id' => $item->id,
-            'Model' => $item
+            'Model' => $item,
         ];
     }
 
