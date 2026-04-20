@@ -17,34 +17,37 @@ class DemoUsersSeeder extends Seeder
             return;
         }
 
-        $admin = User::firstOrCreate(
+        $admin = User::updateOrCreate(
             ['email' => 'admin@midigator.test'],
             [
                 'tenant_id' => $tenant->id,
                 'name' => 'Demo Admin',
                 'password' => Hash::make('password'),
+                'pin' => Hash::make('1234'),
                 'is_active' => true,
                 'is_platform_admin' => false,
             ],
         );
 
-        $manager = User::firstOrCreate(
+        $manager = User::updateOrCreate(
             ['email' => 'manager@midigator.test'],
             [
                 'tenant_id' => $tenant->id,
                 'name' => 'Demo Manager',
                 'password' => Hash::make('password'),
+                'pin' => Hash::make('5678'),
                 'is_active' => true,
                 'is_platform_admin' => false,
             ],
         );
 
-        User::firstOrCreate(
+        User::updateOrCreate(
             ['email' => 'platform@midigator.test'],
             [
                 'tenant_id' => null,
                 'name' => 'Platform Admin',
                 'password' => Hash::make('password'),
+                'pin' => Hash::make('9999'),
                 'is_active' => true,
                 'is_platform_admin' => true,
             ],

@@ -41,6 +41,21 @@ export const useAuthStore = defineStore('auth', () => {
         }
     }
 
+    async function loginWithPin(pin: string): Promise<void> {
+        loading.value = true;
+        error.value = null;
+        try {
+            await ensureCsrf();
+            const { data } = await api.post('/api/v1/auth/login-pin', { pin });
+            user.value = data.user as AuthUser;
+        } catch (e: any) {
+            error.value = e?.response?.data?.message ?? 'Login failed';
+            throw e;
+        } finally {
+            loading.value = false;
+        }
+    }
+
     async function fetchMe(): Promise<void> {
         try {
             const { data } = await api.get('/api/v1/auth/me');
@@ -58,5 +73,5 @@ export const useAuthStore = defineStore('auth', () => {
         }
     }
 
-    return { user, loading, error, isAuthenticated, can, login, fetchMe, logout };
+    return { user, loading, error, isAuthenticated, can, login, loginWithPin, fetchMe, logout };
 });

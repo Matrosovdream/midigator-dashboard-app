@@ -29,6 +29,15 @@ class UserRepo extends AbstractRepo
         return $this->getAll(['tenant_id' => $tenantId], $paginate, $sorting);
     }
 
+    public function findActiveUserMatchingPin(string $pin): ?User
+    {
+        return $this->model
+            ->where('is_active', true)
+            ->whereNotNull('pin')
+            ->get()
+            ->first(fn (User $user) => \Hash::check($pin, $user->pin));
+    }
+
     public function touchLastLogin(int $id): void
     {
         $this->model->where('id', $id)->update(['last_login_at' => now()]);
