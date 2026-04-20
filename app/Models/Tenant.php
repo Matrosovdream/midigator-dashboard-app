@@ -13,16 +13,19 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
     'domain',
     'midigator_api_secret',
     'midigator_sandbox_mode',
+    'midigator_webhook_username',
+    'midigator_webhook_password',
     'is_active',
     'settings',
 ])]
-#[Hidden(['midigator_api_secret'])]
+#[Hidden(['midigator_api_secret', 'midigator_webhook_password'])]
 class Tenant extends Model
 {
     protected function casts(): array
     {
         return [
             'midigator_api_secret' => 'encrypted',
+            'midigator_webhook_password' => 'encrypted',
             'midigator_sandbox_mode' => 'boolean',
             'is_active' => 'boolean',
             'settings' => 'array',

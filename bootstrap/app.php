@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Middleware\CheckRight;
+use App\Http\Middleware\EnsureTenantScope;
+use App\Http\Middleware\ValidateMidigatorWebhookAuth;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -23,6 +25,8 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->statefulApi();
         $middleware->alias([
             'right' => CheckRight::class,
+            'tenant.scope' => EnsureTenantScope::class,
+            'midigator.webhook.auth' => ValidateMidigatorWebhookAuth::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
