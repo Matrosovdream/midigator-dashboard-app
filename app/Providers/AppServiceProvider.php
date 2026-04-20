@@ -21,6 +21,7 @@ use App\Repositories\User\RoleRepo;
 use App\Repositories\User\UserRepo;
 use App\Repositories\Webhook\WebhookLogRepo;
 use App\Repositories\Workflow\StageTransitionRepo;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -66,6 +67,15 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        //
+        Gate::before(function ($user, $ability) {
+            if (method_exists($user, 'isPlatformAdmin') && $user->isPlatformAdmin()) {
+                return true;
+            }
+            return null;
+        });
+
+        Gate::define('right', function ($user, string $right) {
+            return method_exists($user, 'hasRight') && $user->hasRight($right);
+        });
     }
 }

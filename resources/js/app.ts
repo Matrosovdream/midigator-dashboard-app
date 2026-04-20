@@ -1,8 +1,10 @@
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import PrimeVue from 'primevue/config';
+import ToastService from 'primevue/toastservice';
+import ConfirmationService from 'primevue/confirmationservice';
+import StyleClass from 'primevue/styleclass';
 import Aura from '@primevue/themes/aura';
-import 'primeicons/primeicons.css';
 
 import './echo';
 import App from './App.vue';
@@ -13,7 +15,15 @@ const app = createApp(App);
 app.use(createPinia());
 app.use(router);
 app.use(PrimeVue, {
-    theme: { preset: Aura, options: { darkModeSelector: '.dark' } },
+    theme: {
+        preset: Aura,
+        options: {
+            darkModeSelector: '.app-dark',
+        },
+    },
 });
+app.use(ToastService);
+app.use(ConfirmationService);
+app.directive('styleclass', StyleClass);
 
 app.mount('#app');
