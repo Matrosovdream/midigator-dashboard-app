@@ -1,0 +1,302 @@
+[
+  {
+    "arn": "41628388111193619986155",
+    "case_number": "61638319698700",
+    "chargeback_guid": "cbc_e2a56bc719f41f2656b6c5ca36788d69",
+    "event_timestamp": "2026-04-06T21:11:34Z",
+    "event_guid": "evr_bbb30f08fe05ddd42dfe3d02fb60f5ba",
+    "event_type": "chargeback.result",
+    "mid": "189250002",
+    "result": "lost"
+  },
+  {
+    "arn": "88030058117762437621807",
+    "case_number": "50868589574195",
+    "chargeback_guid": "cbc_f23932b8dd75ad2ca3119d04819c48a0",
+    "event_timestamp": "2026-04-12T11:11:47Z",
+    "event_guid": "evr_0f7014fcf85652a5e88c0c7d02a1af33",
+    "event_type": "chargeback.result",
+    "mid": "189250003",
+    "result": "pre_arbitration"
+  },
+  {
+    "arn": "19576937338487326016481",
+    "case_number": "85970039123017",
+    "chargeback_guid": "cbc_474ea2190d6de25df5a84ea9ab3d0d42",
+    "event_timestamp": "2026-04-08T11:33:59Z",
+    "event_guid": "evr_da578d121f6661593b178f239fc0ccf3",
+    "event_type": "chargeback.result",
+    "mid": "189250003",
+    "result": "won"
+  },
+  {
+    "arn": "96260042785628093713446",
+    "case_number": "16363075066399",
+    "chargeback_guid": "cbc_bb5272d1f6807d27f13f68265ff90d0e",
+    "event_timestamp": "2026-04-04T10:03:52Z",
+    "event_guid": "evr_a76588c1262986db649edfc1a967ce17",
+    "event_type": "chargeback.result",
+    "mid": "447711299",
+    "result": "won"
+  },
+  {
+    "arn": "68275189374967397526399",
+    "case_number": "60900785731545",
+    "chargeback_guid": "cbc_6960e6f6b6523b2196ced25100c298f9",
+    "event_timestamp": "2026-04-19T14:02:15Z",
+    "event_guid": "evr_fac2a33dbc640120fd1e12421de31c67",
+    "event_type": "chargeback.result",
+    "mid": "189250002",
+    "result": "won"
+  },
+  {
+    "arn": "63398101560994651791005",
+    "case_number": "18123279249352",
+    "chargeback_guid": "cbc_b78632ae469c4cf7e6bd99695a120894",
+    "event_timestamp": "2026-03-24T17:15:01Z",
+    "event_guid": "evr_61c62335250bb395314338bfca9aa6d3",
+    "event_type": "chargeback.result",
+    "mid": "189250002",
+    "result": "lost"
+  },
+  {
+    "arn": "49411335268992848906008",
+    "case_number": "72745363648913",
+    "chargeback_guid": "cbc_900015b623e5efed4c1f159c42272dce",
+    "event_timestamp": "2026-03-21T00:07:55Z",
+    "event_guid": "evr_a83774c71cb5d3adb173a7675dc85fba",
+    "event_type": "chargeback.result",
+    "mid": "447711299",
+    "result": "won"
+  },
+  {
+    "arn": "92398571213861872810642",
+    "case_number": "90415502067424",
+    "chargeback_guid": "cbc_9876aaf30041139b61be43c549b18b74",
+    "event_timestamp": "2026-03-21T15:33:13Z",
+    "event_guid": "evr_512e2075241ad9f9731d9fd82214b7bf",
+    "event_type": "chargeback.result",
+    "mid": "220014775",
+    "result": "pre_arbitration"
+  },
+  {
+    "arn": "43037878951670986142793",
+    "case_number": "71969868495268",
+    "chargeback_guid": "cbc_66f4085967fc4f7a72f9a44c0049046a",
+    "event_timestamp": "2026-04-20T12:32:15Z",
+    "event_guid": "evr_54dac214f391375ca6f14449a59a3284",
+    "event_type": "chargeback.result",
+    "mid": "189250002",
+    "result": "lost"
+  },
+  {
+    "arn": "56538414397444405947632",
+    "case_number": "51552734088400",
+    "chargeback_guid": "cbc_da514750bab032b73ad44f07b1091137",
+    "event_timestamp": "2026-03-24T21:19:58Z",
+    "event_guid": "evr_016fdd8dad96a2da2b874af7a6b16607",
+    "event_type": "chargeback.result",
+    "mid": "447711299",
+    "result": "lost"
+  },
+  {
+    "arn": "03686099472938537306373",
+    "case_number": "77273396346597",
+    "chargeback_guid": "cbc_825f5960d211e7cfcb3e2ec6191d1c9d",
+    "event_timestamp": "2026-03-22T08:28:17Z",
+    "event_guid": "evr_b6f9347432dc39aa3ce56812bea7d975",
+    "event_type": "chargeback.result",
+    "mid": "447711299",
+    "result": "pre_arbitration"
+  },
+  {
+    "arn": "88468515140508283381252",
+    "case_number": "56365859960428",
+    "chargeback_guid": "cbc_03d5ce07c99dc516bee72b17357ce3e0",
+    "event_timestamp": "2026-03-26T07:13:45Z",
+    "event_guid": "evr_dab80cb6627ef5360393bec9f0bd1220",
+    "event_type": "chargeback.result",
+    "mid": "220014775",
+    "result": "pre_arbitration"
+  },
+  {
+    "arn": "62264102547392797265265",
+    "case_number": "09762219272381",
+    "chargeback_guid": "cbc_fba717046d1497d60326048509eeec9c",
+    "event_timestamp": "2026-04-09T13:54:44Z",
+    "event_guid": "evr_66bb016badf799826be20cf1385695ac",
+    "event_type": "chargeback.result",
+    "mid": "447711299",
+    "result": "won"
+  },
+  {
+    "arn": "15321444948209263017281",
+    "case_number": "61601068507072",
+    "chargeback_guid": "cbc_4ad5b95178355d6ae25c56a7f920ee09",
+    "event_timestamp": "2026-03-26T03:15:38Z",
+    "event_guid": "evr_c8953d0b6f11e38986bd807874d433c5",
+    "event_type": "chargeback.result",
+    "mid": "311900012",
+    "result": "lost"
+  },
+  {
+    "arn": "71278335966445815745122",
+    "case_number": "30495678801259",
+    "chargeback_guid": "cbc_b206bf2dee568b1ee99f0b5767d4722c",
+    "event_timestamp": "2026-03-21T21:43:14Z",
+    "event_guid": "evr_e95a6789f1459e9d65522dbf38991414",
+    "event_type": "chargeback.result",
+    "mid": "311900012",
+    "result": "won"
+  },
+  {
+    "arn": "82997961287099570802957",
+    "case_number": "58217844289713",
+    "chargeback_guid": "cbc_1cb584a8cb5e6ec5dae0a026fa42db43",
+    "event_timestamp": "2026-03-23T11:14:29Z",
+    "event_guid": "evr_b3679b0b9a358fedea7a9843fec67362",
+    "event_type": "chargeback.result",
+    "mid": "220014775",
+    "result": "pre_arbitration"
+  },
+  {
+    "arn": "16774844225870723343927",
+    "case_number": "38345126963607",
+    "chargeback_guid": "cbc_c1bec8a85328d3ce53bf00f167243c34",
+    "event_timestamp": "2026-04-17T01:06:58Z",
+    "event_guid": "evr_2b411bc60d92bc394580434a741f87e8",
+    "event_type": "chargeback.result",
+    "mid": "189250003",
+    "result": "lost"
+  },
+  {
+    "arn": "04335129323563890184216",
+    "case_number": "47527233135406",
+    "chargeback_guid": "cbc_cc85a5b8df11b6c2b27f062c7b86464e",
+    "event_timestamp": "2026-03-30T05:15:03Z",
+    "event_guid": "evr_95a2839b847eebd28d0621f43b850725",
+    "event_type": "chargeback.result",
+    "mid": "447711299",
+    "result": "won"
+  },
+  {
+    "arn": "30129473795625121515635",
+    "case_number": "86976920229614",
+    "chargeback_guid": "cbc_01f2c674c36cb5d51932a4267b41ea2d",
+    "event_timestamp": "2026-03-23T22:58:41Z",
+    "event_guid": "evr_569ee35ef35395ee804aa6fb4090b797",
+    "event_type": "chargeback.result",
+    "mid": "189250003",
+    "result": "lost"
+  },
+  {
+    "arn": "76513677180814738286736",
+    "case_number": "88197306460171",
+    "chargeback_guid": "cbc_4209b6adf4817d1e1e215a020a7ef4af",
+    "event_timestamp": "2026-03-24T07:00:35Z",
+    "event_guid": "evr_b464496d43f47155c8da2f929f6aa45f",
+    "event_type": "chargeback.result",
+    "mid": "447711299",
+    "result": "pre_arbitration"
+  },
+  {
+    "arn": "70724016115335076804361",
+    "case_number": "93410845438233",
+    "chargeback_guid": "cbc_a4fece86cf608eeff3fc25ff4cc7202e",
+    "event_timestamp": "2026-04-11T04:43:12Z",
+    "event_guid": "evr_3313ad5757abeadbc12c2cedb6617b93",
+    "event_type": "chargeback.result",
+    "mid": "447711299",
+    "result": "won"
+  },
+  {
+    "arn": "73386796112436423809416",
+    "case_number": "84061880353449",
+    "chargeback_guid": "cbc_6c44a9c757585cf86a25e93db704175e",
+    "event_timestamp": "2026-03-30T02:31:56Z",
+    "event_guid": "evr_54d82505a950b311ba64fb3ddb87152f",
+    "event_type": "chargeback.result",
+    "mid": "189250002",
+    "result": "lost"
+  },
+  {
+    "arn": "57363417770997596576052",
+    "case_number": "92615031202762",
+    "chargeback_guid": "cbc_7ca13b39b976987855d2d78266a917f1",
+    "event_timestamp": "2026-03-27T21:25:04Z",
+    "event_guid": "evr_45a09256f0f873e29d13f922cb66c695",
+    "event_type": "chargeback.result",
+    "mid": "220014775",
+    "result": "pre_arbitration"
+  },
+  {
+    "arn": "18973538448491253419369",
+    "case_number": "46616957932540",
+    "chargeback_guid": "cbc_5bea8dd25d2ee54e3739fcf8195e27f0",
+    "event_timestamp": "2026-04-18T16:04:57Z",
+    "event_guid": "evr_dfd164b1ca807b46dc5b8a6124dc1265",
+    "event_type": "chargeback.result",
+    "mid": "189250003",
+    "result": "lost"
+  },
+  {
+    "arn": "20608422247655712233291",
+    "case_number": "64427612360235",
+    "chargeback_guid": "cbc_4bbf69252d55d7282e0f5434cca57eed",
+    "event_timestamp": "2026-03-23T20:51:09Z",
+    "event_guid": "evr_b50af84fd81c783c2ed3b2f44bbee243",
+    "event_type": "chargeback.result",
+    "mid": "189250003",
+    "result": "pre_arbitration"
+  },
+  {
+    "arn": "74080704440552049746567",
+    "case_number": "92426342625365",
+    "chargeback_guid": "cbc_a1c20e872ca1d5ad31344c7ae3a53622",
+    "event_timestamp": "2026-03-30T08:27:50Z",
+    "event_guid": "evr_facc4e7d4255b7666c6f5cfc0b3b455c",
+    "event_type": "chargeback.result",
+    "mid": "220014775",
+    "result": "pre_arbitration"
+  },
+  {
+    "arn": "51258123474906694263162",
+    "case_number": "39117374112102",
+    "chargeback_guid": "cbc_9c4840c1cb5de7e2775ab4b0166708e8",
+    "event_timestamp": "2026-04-19T19:21:21Z",
+    "event_guid": "evr_fd58451118128d97a31ad7ef25297cbf",
+    "event_type": "chargeback.result",
+    "mid": "189250002",
+    "result": "lost"
+  },
+  {
+    "arn": "50802422634675388172106",
+    "case_number": "87593322342923",
+    "chargeback_guid": "cbc_2e7d67bb67636d12eb1c179b53fc5417",
+    "event_timestamp": "2026-04-20T00:56:57Z",
+    "event_guid": "evr_6d5fd6d4f1a67f4a523922bc0cda5622",
+    "event_type": "chargeback.result",
+    "mid": "447711299",
+    "result": "won"
+  },
+  {
+    "arn": "78181143692373808903551",
+    "case_number": "08091498516634",
+    "chargeback_guid": "cbc_e2a59b7bd332f3116e132a5fa89ec26a",
+    "event_timestamp": "2026-04-01T13:48:29Z",
+    "event_guid": "evr_0e603220c25975ad9739814ce5e4c78a",
+    "event_type": "chargeback.result",
+    "mid": "220014775",
+    "result": "pre_arbitration"
+  },
+  {
+    "arn": "27405098171345999188516",
+    "case_number": "71757550556911",
+    "chargeback_guid": "cbc_aad3eb8f630f668675b41ba3b91c272f",
+    "event_timestamp": "2026-03-21T06:22:33Z",
+    "event_guid": "evr_269353f26b9a3245a88c937d892ecbef",
+    "event_type": "chargeback.result",
+    "mid": "189250002",
+    "result": "lost"
+  }
+]
