@@ -65,21 +65,21 @@ jobs:
           cache-from: type=gha,scope=${{ matrix.name }}
           cache-to: type=gha,mode=max,scope=${{ matrix.name }}
 
-  deploy:
-    needs: build
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy to server over SSH
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          username: ${{ secrets.DEPLOY_USER }}
-          key: ${{ secrets.DEPLOY_SSH_KEY }}
-          script: |
-            cd ${{ secrets.DEPLOY_PATH }}
-            export APP_VERSION=sha-${GITHUB_SHA::7}
-            docker compose -f compose.prod.registry.yaml pull
-            docker compose -f compose.prod.registry.yaml up -d --remove-orphans
-            docker image prune -f
-          envs: GITHUB_SHA
+  # deploy:
+  #   needs: build
+  #   if: github.ref == 'refs/heads/main'
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Deploy to server over SSH
+  #       uses: appleboy/ssh-action@v1
+  #       with:
+  #         host: ${{ secrets.DEPLOY_HOST }}
+  #         username: ${{ secrets.DEPLOY_USER }}
+  #         key: ${{ secrets.DEPLOY_SSH_KEY }}
+  #         script: |
+  #           cd ${{ secrets.DEPLOY_PATH }}
+  #           export APP_VERSION=sha-${GITHUB_SHA::7}
+  #           docker compose -f compose.prod.registry.yaml pull
+  #           docker compose -f compose.prod.registry.yaml up -d --remove-orphans
+  #           docker image prune -f
+  #         envs: GITHUB_SHA

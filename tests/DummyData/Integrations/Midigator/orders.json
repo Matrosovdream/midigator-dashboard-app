@@ -1,0 +1,2904 @@
+[
+  {
+    "order_id": "700000",
+    "order_date": "2026-01-16T19:46:50Z",
+    "mid": "447711299",
+    "card_brand": "mastercard",
+    "card_last_4": "0614",
+    "card_first_6": "422530",
+    "card_exp_month": "07",
+    "card_exp_year": "2029",
+    "order_amount": 207500,
+    "avs": "y",
+    "cvv": "n",
+    "email": "mei.johnson0@example.com",
+    "phone": "555-192-7955",
+    "refunded": false,
+    "refunded_amount": 0,
+    "subscription_cycle": 1,
+    "subscription_parent_id": "856",
+    "ip_address": "145.32.243.58",
+    "currency": "CAD",
+    "processor_auth_code": "757911",
+    "processor_transaction_id": "NMI2013",
+    "billing_first_name": "Mei",
+    "billing_last_name": "Johnson",
+    "billing_street_address_1": "8900 Pine Rd",
+    "billing_street_address_2": "#12A",
+    "billing_city": "Austin",
+    "billing_state": "MI",
+    "billing_postcode": "38977",
+    "billing_country": "US",
+    "marketing_source": "Affiliate - Partner A",
+    "sub_marketing_sources": [
+      "Age 25-34",
+      "Male"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "dhl",
+          "tracking_number": "5556151075645",
+          "first_name": "Mei",
+          "last_name": "Johnson",
+          "street_address_1": "789 Oak Ave",
+          "street_address_2": "Floor 3",
+          "city": "Seattle",
+          "state": "TX",
+          "postcode": "57393",
+          "country": "US"
+        },
+        {
+          "carrier": "ups",
+          "tracking_number": "6255872914714",
+          "first_name": "Mei",
+          "last_name": "Johnson",
+          "street_address_1": "123 Sample Address",
+          "street_address_2": "Apt. B",
+          "city": "Seattle",
+          "state": "WA",
+          "postcode": "51123",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "shipping confirmation",
+          "value": "2026-02-02T22:12:57Z"
+        },
+        {
+          "type": "signature capture",
+          "value": "2026-04-12T11:33:18Z"
+        },
+        {
+          "type": "login date",
+          "value": "2026-04-12T14:06:29Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Premium Plan - Monthly",
+        "price": 188058,
+        "quantity": 4,
+        "sku": "SKU-95-RD-S"
+      },
+      {
+        "id": "1001",
+        "name": "Supplement Pack",
+        "price": 93381,
+        "quantity": 2,
+        "sku": "SKU-88-BK-XL"
+      },
+      {
+        "id": "1002",
+        "name": "Widget - Black",
+        "price": 57400,
+        "quantity": 3,
+        "sku": "SKU-26-WH-XL"
+      },
+      {
+        "id": "1003",
+        "name": "Supplement Pack",
+        "price": 130355,
+        "quantity": 1,
+        "sku": "SKU-31-BL-XL"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-04-03T08:58:21Z",
+        "value": "Fulfillment confirmed by warehouse"
+      },
+      {
+        "timestamp": "2026-04-02T15:24:26Z",
+        "value": "Manual review passed"
+      },
+      {
+        "timestamp": "2026-04-06T09:45:37Z",
+        "value": "Auto-note: subscription renewal"
+      }
+    ]
+  },
+  {
+    "order_id": "700001",
+    "order_date": "2026-04-19T09:24:14Z",
+    "mid": "220014775",
+    "card_brand": "amex",
+    "card_last_4": "2056",
+    "card_first_6": "535132",
+    "card_exp_month": "10",
+    "card_exp_year": "2031",
+    "order_amount": 6823,
+    "avs": "y",
+    "cvv": "s",
+    "email": "sam.patel1@example.com",
+    "phone": "555-991-7428",
+    "refunded": false,
+    "refunded_amount": 0,
+    "ip_address": "102.103.101.27",
+    "currency": "EUR",
+    "processor_auth_code": "765100",
+    "processor_transaction_id": "NMI7560",
+    "billing_first_name": "Sam",
+    "billing_last_name": "Patel",
+    "billing_street_address_1": "123 Sample Address",
+    "billing_street_address_2": "Suite 200",
+    "billing_city": "Detroit",
+    "billing_state": "NY",
+    "billing_postcode": "67753",
+    "billing_country": "US",
+    "marketing_source": "Facebook 234",
+    "sub_marketing_sources": [
+      "Age 35-44",
+      "Female"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "usps",
+          "tracking_number": "559602369641",
+          "first_name": "Sam",
+          "last_name": "Patel",
+          "street_address_1": "14 Elm Street",
+          "street_address_2": "Floor 3",
+          "city": "Austin",
+          "state": "TX",
+          "postcode": "50875",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "login date",
+          "value": "2026-03-07T14:34:18Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "T-Shirt Large",
+        "price": 388,
+        "quantity": 2,
+        "sku": "SKU-77-RD-M"
+      },
+      {
+        "id": "1001",
+        "name": "Digital Course",
+        "price": 4648,
+        "quantity": 1,
+        "sku": "SKU-77-RD-S"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-02-25T05:17:25Z",
+        "value": "Auto-note: subscription renewal"
+      },
+      {
+        "timestamp": "2026-03-29T06:16:14Z",
+        "value": "Fulfillment confirmed by warehouse"
+      },
+      {
+        "timestamp": "2026-03-29T17:36:09Z",
+        "value": "Auto-note: subscription renewal"
+      }
+    ],
+    "match": {
+      "chargeback_guid": "cbc_cdb3850044bf7eff533339ed7ac1aecc"
+    }
+  },
+  {
+    "order_id": "700002",
+    "order_date": "2026-01-08T23:25:01Z",
+    "mid": "189250002",
+    "card_brand": "mastercard",
+    "card_last_4": "2785",
+    "card_first_6": "433302",
+    "card_exp_month": "01",
+    "card_exp_year": "2027",
+    "order_amount": 228000,
+    "avs": "m",
+    "cvv": "s",
+    "email": "emma.johnson2@example.com",
+    "phone": "555-925-3394",
+    "refunded": false,
+    "refunded_amount": 0,
+    "subscription_cycle": 10,
+    "subscription_parent_id": "856",
+    "ip_address": "153.251.122.169",
+    "currency": "USD",
+    "processor_auth_code": "263486",
+    "processor_transaction_id": "NMI9989",
+    "billing_first_name": "Emma",
+    "billing_last_name": "Johnson",
+    "billing_street_address_1": "8900 Pine Rd",
+    "billing_street_address_2": "Suite 200",
+    "billing_city": "Detroit",
+    "billing_state": "MI",
+    "billing_postcode": "95154",
+    "billing_country": "US",
+    "marketing_source": "Affiliate - Partner A",
+    "sub_marketing_sources": [
+      "Age 45-54",
+      "Premium Tier"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "dhl",
+          "tracking_number": "8222252419345",
+          "first_name": "Emma",
+          "last_name": "Johnson",
+          "street_address_1": "8900 Pine Rd",
+          "street_address_2": "Floor 3",
+          "city": "Seattle",
+          "state": "NY",
+          "postcode": "79707",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "email opened",
+          "value": "2026-04-17T23:01:37Z"
+        },
+        {
+          "type": "email opened",
+          "value": "2026-04-20T09:39:39Z"
+        },
+        {
+          "type": "signature capture",
+          "value": "2026-01-30T14:43:13Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Premium Plan - Monthly",
+        "price": 179068,
+        "quantity": 5,
+        "sku": "SKU-77-BL-S"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-04-17T06:38:31Z",
+        "value": "CRM API - Customer was refunded"
+      },
+      {
+        "timestamp": "2026-03-02T10:18:20Z",
+        "value": "Fulfillment confirmed by warehouse"
+      },
+      {
+        "timestamp": "2026-04-19T11:22:28Z",
+        "value": "Fulfillment confirmed by warehouse"
+      }
+    ]
+  },
+  {
+    "order_id": "700003",
+    "order_date": "2025-12-18T21:35:04Z",
+    "mid": "447711299",
+    "card_brand": "amex",
+    "card_last_4": "9167",
+    "card_first_6": "453107",
+    "card_exp_month": "08",
+    "card_exp_year": "2027",
+    "order_amount": 269019,
+    "avs": "s",
+    "cvv": "m",
+    "email": "noah.wilson3@example.com",
+    "phone": "555-501-8243",
+    "refunded": true,
+    "refunded_amount": 269019,
+    "subscription_cycle": 6,
+    "subscription_parent_id": "84",
+    "ip_address": "172.62.110.19",
+    "currency": "USD",
+    "processor_auth_code": "801992",
+    "processor_transaction_id": "NMI5960",
+    "billing_first_name": "Noah",
+    "billing_last_name": "Wilson",
+    "billing_street_address_1": "123 Sample Address",
+    "billing_street_address_2": "Suite 200",
+    "billing_city": "Chicago",
+    "billing_state": "IL",
+    "billing_postcode": "96541",
+    "billing_country": "US",
+    "marketing_source": "Google Ads - Brand",
+    "sub_marketing_sources": [
+      "Age 35-44",
+      "Female"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "dhl",
+          "tracking_number": "7081627944303",
+          "first_name": "Noah",
+          "last_name": "Wilson",
+          "street_address_1": "789 Oak Ave",
+          "street_address_2": "#12A",
+          "city": "Austin",
+          "state": "TX",
+          "postcode": "12370",
+          "country": "CA"
+        }
+      ],
+      "proof": [
+        {
+          "type": "email opened",
+          "value": "2026-01-31T04:18:44Z"
+        },
+        {
+          "type": "login date",
+          "value": "2026-03-22T10:45:32Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Widget - Black",
+        "price": 95384,
+        "quantity": 3,
+        "sku": "SKU-26-BL-L"
+      },
+      {
+        "id": "1001",
+        "name": "Supplement Pack",
+        "price": 78510,
+        "quantity": 5,
+        "sku": "SKU-75-BL-L"
+      },
+      {
+        "id": "1002",
+        "name": "Widget - Black",
+        "price": 146508,
+        "quantity": 1,
+        "sku": "SKU-98-WH-XL"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-04-03T13:10:43Z",
+        "value": "Customer support call logged"
+      }
+    ]
+  },
+  {
+    "order_id": "700004",
+    "order_date": "2026-04-18T03:15:22Z",
+    "mid": "220014775",
+    "card_brand": "mastercard",
+    "card_last_4": "0707",
+    "card_first_6": "538127",
+    "card_exp_month": "12",
+    "card_exp_year": "2027",
+    "order_amount": 449409,
+    "avs": "y",
+    "cvv": "n",
+    "email": "john.wilson4@example.com",
+    "phone": "555-368-1825",
+    "refunded": true,
+    "refunded_amount": 449409,
+    "subscription_cycle": 3,
+    "subscription_parent_id": "216",
+    "ip_address": "239.80.161.79",
+    "currency": "GBP",
+    "processor_auth_code": "896391",
+    "processor_transaction_id": "NMI4372",
+    "billing_first_name": "John",
+    "billing_last_name": "Wilson",
+    "billing_street_address_1": "789 Oak Ave",
+    "billing_street_address_2": "Floor 3",
+    "billing_city": "Seattle",
+    "billing_state": "IL",
+    "billing_postcode": "33317",
+    "billing_country": "US",
+    "marketing_source": "Email Campaign Q2",
+    "sub_marketing_sources": [
+      "Age 18-25"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "usps",
+          "tracking_number": "059524666589",
+          "first_name": "John",
+          "last_name": "Wilson",
+          "street_address_1": "789 Oak Ave",
+          "street_address_2": "Suite 200",
+          "city": "New York",
+          "state": "CA",
+          "postcode": "36034",
+          "country": "DE"
+        },
+        {
+          "carrier": "ups",
+          "tracking_number": "99806840635956012033",
+          "first_name": "John",
+          "last_name": "Wilson",
+          "street_address_1": "8900 Pine Rd",
+          "street_address_2": "Unit 5",
+          "city": "New York",
+          "state": "MI",
+          "postcode": "50573",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "ip match",
+          "value": "2026-04-20T03:26:43Z"
+        },
+        {
+          "type": "signature capture",
+          "value": "2026-03-15T21:09:36Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "T-Shirt Large",
+        "price": 407171,
+        "quantity": 1,
+        "sku": "SKU-21-RD-S"
+      },
+      {
+        "id": "1001",
+        "name": "Widget - White",
+        "price": 209657,
+        "quantity": 5,
+        "sku": "SKU-15-BL-S"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-03-31T17:36:43Z",
+        "value": "Fulfillment confirmed by warehouse"
+      },
+      {
+        "timestamp": "2026-03-18T09:07:51Z",
+        "value": "Fulfillment confirmed by warehouse"
+      }
+    ],
+    "match": {
+      "chargeback_guid": "cbc_65f2ba0deabc288dcd9eab30251d8aaa"
+    }
+  },
+  {
+    "order_id": "700005",
+    "order_date": "2025-12-04T11:08:15Z",
+    "mid": "189250002",
+    "card_brand": "discover",
+    "card_last_4": "4131",
+    "card_first_6": "419516",
+    "card_exp_month": "05",
+    "card_exp_year": "2027",
+    "order_amount": 2236,
+    "avs": "n",
+    "cvv": "n",
+    "email": "emma.nguyen5@example.com",
+    "phone": "555-857-8542",
+    "refunded": false,
+    "refunded_amount": 0,
+    "subscription_cycle": 8,
+    "subscription_parent_id": "875",
+    "ip_address": "98.20.123.234",
+    "currency": "CAD",
+    "processor_auth_code": "401275",
+    "processor_transaction_id": "NMI1765",
+    "billing_first_name": "Emma",
+    "billing_last_name": "Nguyen",
+    "billing_street_address_1": "8900 Pine Rd",
+    "billing_street_address_2": "Suite 200",
+    "billing_city": "Detroit",
+    "billing_state": "WA",
+    "billing_postcode": "29323",
+    "billing_country": "US",
+    "marketing_source": "Email Campaign Q2",
+    "sub_marketing_sources": [
+      "Age 45-54",
+      "Premium Tier"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "ups",
+          "tracking_number": "449024724795",
+          "first_name": "Emma",
+          "last_name": "Nguyen",
+          "street_address_1": "789 Oak Ave",
+          "street_address_2": "Apt. B",
+          "city": "Austin",
+          "state": "MI",
+          "postcode": "47956",
+          "country": "CA"
+        },
+        {
+          "carrier": "usps",
+          "tracking_number": "93990072366213483196",
+          "first_name": "Emma",
+          "last_name": "Nguyen",
+          "street_address_1": "14 Elm Street",
+          "street_address_2": "Unit 5",
+          "city": "Chicago",
+          "state": "NY",
+          "postcode": "64549",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "shipping confirmation",
+          "value": "2026-04-05T03:50:28Z"
+        },
+        {
+          "type": "shipping confirmation",
+          "value": "2026-03-01T09:51:36Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Digital Course",
+        "price": 792,
+        "quantity": 3,
+        "sku": "SKU-57-BK-XL"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-02-23T19:46:25Z",
+        "value": "Manual review passed"
+      },
+      {
+        "timestamp": "2026-03-03T04:56:45Z",
+        "value": "Customer support call logged"
+      }
+    ]
+  },
+  {
+    "order_id": "700006",
+    "order_date": "2026-02-11T00:18:28Z",
+    "mid": "189250003",
+    "card_brand": "amex",
+    "card_last_4": "7008",
+    "card_first_6": "407605",
+    "card_exp_month": "11",
+    "card_exp_year": "2029",
+    "order_amount": 438109,
+    "avs": "m",
+    "cvv": "n",
+    "email": "john.doe6@example.com",
+    "phone": "555-836-2320",
+    "refunded": false,
+    "refunded_amount": 0,
+    "ip_address": "13.239.188.106",
+    "currency": "EUR",
+    "processor_auth_code": "744784",
+    "processor_transaction_id": "NMI3270",
+    "billing_first_name": "John",
+    "billing_last_name": "Doe",
+    "billing_street_address_1": "789 Oak Ave",
+    "billing_street_address_2": "Floor 3",
+    "billing_city": "Detroit",
+    "billing_state": "WA",
+    "billing_postcode": "26686",
+    "billing_country": "US",
+    "marketing_source": "Organic",
+    "sub_marketing_sources": [
+      "Returning Customer"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "fedex",
+          "tracking_number": "276424616058543",
+          "first_name": "John",
+          "last_name": "Doe",
+          "street_address_1": "14 Elm Street",
+          "street_address_2": "Floor 3",
+          "city": "New York",
+          "state": "WA",
+          "postcode": "35219",
+          "country": "US"
+        },
+        {
+          "carrier": "usps",
+          "tracking_number": "3022587445330",
+          "first_name": "John",
+          "last_name": "Doe",
+          "street_address_1": "789 Oak Ave",
+          "street_address_2": "#12A",
+          "city": "San Francisco",
+          "state": "NY",
+          "postcode": "75981",
+          "country": "GB"
+        }
+      ],
+      "proof": [
+        {
+          "type": "ip match",
+          "value": "2026-04-09T04:53:33Z"
+        },
+        {
+          "type": "signature capture",
+          "value": "2026-02-27T17:22:21Z"
+        },
+        {
+          "type": "shipping confirmation",
+          "value": "2026-04-18T09:48:21Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "T-Shirt Large",
+        "price": 257008,
+        "quantity": 1,
+        "sku": "SKU-19-BL-XL"
+      },
+      {
+        "id": "1001",
+        "name": "Supplement Pack",
+        "price": 130466,
+        "quantity": 1,
+        "sku": "SKU-38-WH-M"
+      },
+      {
+        "id": "1002",
+        "name": "T-Shirt Large",
+        "price": 357802,
+        "quantity": 1,
+        "sku": "SKU-99-BL-S"
+      },
+      {
+        "id": "1003",
+        "name": "T-Shirt Large",
+        "price": 407498,
+        "quantity": 1,
+        "sku": "SKU-10-WH-M"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-02-21T12:09:03Z",
+        "value": "Customer support call logged"
+      },
+      {
+        "timestamp": "2026-04-11T17:34:15Z",
+        "value": "Manual review passed"
+      },
+      {
+        "timestamp": "2026-03-07T10:44:44Z",
+        "value": "Customer support call logged"
+      }
+    ],
+    "match": {
+      "chargeback_guid": "cbc_89639047fae733fb407a64ae3056a3cb"
+    }
+  },
+  {
+    "order_id": "700007",
+    "order_date": "2026-03-02T06:21:34Z",
+    "mid": "220014775",
+    "card_brand": "amex",
+    "card_last_4": "1785",
+    "card_first_6": "529961",
+    "card_exp_month": "10",
+    "card_exp_year": "2027",
+    "order_amount": 108092,
+    "avs": "n",
+    "cvv": "s",
+    "email": "noah.smith7@example.com",
+    "phone": "555-527-1924",
+    "refunded": false,
+    "refunded_amount": 0,
+    "subscription_cycle": 10,
+    "subscription_parent_id": "159",
+    "ip_address": "237.101.14.55",
+    "currency": "USD",
+    "processor_auth_code": "725084",
+    "processor_transaction_id": "NMI3325",
+    "billing_first_name": "Noah",
+    "billing_last_name": "Smith",
+    "billing_street_address_1": "14 Elm Street",
+    "billing_street_address_2": "Apt. B",
+    "billing_city": "Chicago",
+    "billing_state": "MI",
+    "billing_postcode": "34130",
+    "billing_country": "CA",
+    "marketing_source": "Organic",
+    "sub_marketing_sources": [
+      "Age 45-54",
+      "Premium Tier"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "usps",
+          "tracking_number": "931970633310",
+          "first_name": "Noah",
+          "last_name": "Smith",
+          "street_address_1": "789 Oak Ave",
+          "street_address_2": "Apt. B",
+          "city": "San Francisco",
+          "state": "TX",
+          "postcode": "26214",
+          "country": "GB"
+        },
+        {
+          "carrier": "ups",
+          "tracking_number": "38840439138048700092",
+          "first_name": "Noah",
+          "last_name": "Smith",
+          "street_address_1": "123 Sample Address",
+          "street_address_2": "#12A",
+          "city": "San Francisco",
+          "state": "CA",
+          "postcode": "45692",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "login date",
+          "value": "2026-03-17T14:05:04Z"
+        },
+        {
+          "type": "shipping confirmation",
+          "value": "2026-03-16T04:50:02Z"
+        },
+        {
+          "type": "email opened",
+          "value": "2026-01-29T11:48:56Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Widget - Black",
+        "price": 62482,
+        "quantity": 4,
+        "sku": "SKU-59-RD-XL"
+      },
+      {
+        "id": "1001",
+        "name": "Supplement Pack",
+        "price": 17593,
+        "quantity": 4,
+        "sku": "SKU-33-BK-L"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-03-02T09:12:33Z",
+        "value": "Customer support call logged"
+      },
+      {
+        "timestamp": "2026-02-24T03:21:25Z",
+        "value": "Fulfillment confirmed by warehouse"
+      },
+      {
+        "timestamp": "2026-04-14T21:38:23Z",
+        "value": "Auto-note: subscription renewal"
+      }
+    ]
+  },
+  {
+    "order_id": "700008",
+    "order_date": "2026-03-09T23:54:42Z",
+    "mid": "189250002",
+    "card_brand": "amex",
+    "card_last_4": "1377",
+    "card_first_6": "454615",
+    "card_exp_month": "02",
+    "card_exp_year": "2029",
+    "order_amount": 34437,
+    "avs": "s",
+    "cvv": "s",
+    "email": "sam.brown8@example.com",
+    "phone": "555-277-4837",
+    "refunded": false,
+    "refunded_amount": 0,
+    "ip_address": "35.107.118.159",
+    "currency": "CAD",
+    "processor_auth_code": "346345",
+    "processor_transaction_id": "NMI9823",
+    "billing_first_name": "Sam",
+    "billing_last_name": "Brown",
+    "billing_street_address_1": "123 Sample Address",
+    "billing_street_address_2": "Unit 5",
+    "billing_city": "San Francisco",
+    "billing_state": "CA",
+    "billing_postcode": "84302",
+    "billing_country": "US",
+    "marketing_source": "Email Campaign Q2",
+    "sub_marketing_sources": [
+      "Age 35-44",
+      "Female"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "ups",
+          "tracking_number": "22185339528691488902",
+          "first_name": "Sam",
+          "last_name": "Brown",
+          "street_address_1": "123 Sample Address",
+          "street_address_2": "Apt. B",
+          "city": "New York",
+          "state": "WA",
+          "postcode": "86440",
+          "country": "US"
+        },
+        {
+          "carrier": "usps",
+          "tracking_number": "516760673030907",
+          "first_name": "Sam",
+          "last_name": "Brown",
+          "street_address_1": "456 Market St",
+          "street_address_2": "Apt. B",
+          "city": "San Francisco",
+          "state": "TX",
+          "postcode": "98908",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "email opened",
+          "value": "2026-03-12T11:37:46Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "T-Shirt Large",
+        "price": 31886,
+        "quantity": 1,
+        "sku": "SKU-62-BK-XL"
+      },
+      {
+        "id": "1001",
+        "name": "Digital Course",
+        "price": 10327,
+        "quantity": 5,
+        "sku": "SKU-21-WH-XL"
+      },
+      {
+        "id": "1002",
+        "name": "Digital Course",
+        "price": 17970,
+        "quantity": 4,
+        "sku": "SKU-46-RD-XL"
+      },
+      {
+        "id": "1003",
+        "name": "Widget - Black",
+        "price": 20669,
+        "quantity": 5,
+        "sku": "SKU-55-BL-XL"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-02-24T02:09:36Z",
+        "value": "Manual review passed"
+      }
+    ]
+  },
+  {
+    "order_id": "700009",
+    "order_date": "2026-03-28T01:13:52Z",
+    "mid": "220014775",
+    "card_brand": "discover",
+    "card_last_4": "2663",
+    "card_first_6": "434072",
+    "card_exp_month": "01",
+    "card_exp_year": "2026",
+    "order_amount": 494371,
+    "avs": "m",
+    "cvv": "n",
+    "email": "liam.patel9@example.com",
+    "phone": "555-756-7499",
+    "refunded": true,
+    "refunded_amount": 494371,
+    "ip_address": "23.147.160.238",
+    "currency": "USD",
+    "processor_auth_code": "873061",
+    "processor_transaction_id": "NMI9265",
+    "billing_first_name": "Liam",
+    "billing_last_name": "Patel",
+    "billing_street_address_1": "456 Market St",
+    "billing_street_address_2": "Suite 200",
+    "billing_city": "San Francisco",
+    "billing_state": "CA",
+    "billing_postcode": "31209",
+    "billing_country": "GB",
+    "marketing_source": "Google Ads - Brand",
+    "sub_marketing_sources": [
+      "Age 18-25"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "dhl",
+          "tracking_number": "77838093660768686614",
+          "first_name": "Liam",
+          "last_name": "Patel",
+          "street_address_1": "8900 Pine Rd",
+          "street_address_2": "Suite 200",
+          "city": "Detroit",
+          "state": "TX",
+          "postcode": "77881",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "shipping confirmation",
+          "value": "2026-04-05T09:35:02Z"
+        },
+        {
+          "type": "ip match",
+          "value": "2026-04-14T19:57:00Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Digital Course",
+        "price": 439659,
+        "quantity": 3,
+        "sku": "SKU-25-BL-XL"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-02-24T17:01:29Z",
+        "value": "Manual review passed"
+      },
+      {
+        "timestamp": "2026-03-31T19:35:21Z",
+        "value": "Manual review passed"
+      },
+      {
+        "timestamp": "2026-03-09T02:22:16Z",
+        "value": "Manual review passed"
+      }
+    ],
+    "match": {
+      "chargeback_guid": "cbc_20f779ddc6155c8a02e5b1ceac019b12"
+    }
+  },
+  {
+    "order_id": "700010",
+    "order_date": "2026-02-23T10:57:26Z",
+    "mid": "447711299",
+    "card_brand": "amex",
+    "card_last_4": "2601",
+    "card_first_6": "484892",
+    "card_exp_month": "10",
+    "card_exp_year": "2028",
+    "order_amount": 425693,
+    "avs": "s",
+    "cvv": "n",
+    "email": "emma.nguyen10@example.com",
+    "phone": "555-360-9228",
+    "refunded": false,
+    "refunded_amount": 0,
+    "subscription_cycle": 8,
+    "subscription_parent_id": "223",
+    "ip_address": "152.68.158.130",
+    "currency": "USD",
+    "processor_auth_code": "434577",
+    "processor_transaction_id": "NMI7099",
+    "billing_first_name": "Emma",
+    "billing_last_name": "Nguyen",
+    "billing_street_address_1": "123 Sample Address",
+    "billing_street_address_2": "Suite 200",
+    "billing_city": "New York",
+    "billing_state": "TX",
+    "billing_postcode": "31132",
+    "billing_country": "DE",
+    "marketing_source": "Email Campaign Q2",
+    "sub_marketing_sources": [
+      "Age 45-54",
+      "Premium Tier"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "dhl",
+          "tracking_number": "7270894568258",
+          "first_name": "Emma",
+          "last_name": "Nguyen",
+          "street_address_1": "789 Oak Ave",
+          "street_address_2": "Unit 5",
+          "city": "Austin",
+          "state": "CA",
+          "postcode": "85675",
+          "country": "US"
+        },
+        {
+          "carrier": "fedex",
+          "tracking_number": "741708269563001",
+          "first_name": "Emma",
+          "last_name": "Nguyen",
+          "street_address_1": "8900 Pine Rd",
+          "street_address_2": "Floor 3",
+          "city": "Austin",
+          "state": "WA",
+          "postcode": "57723",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "signature capture",
+          "value": "2026-03-21T18:09:46Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Widget - Black",
+        "price": 1570,
+        "quantity": 5,
+        "sku": "SKU-55-RD-S"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-03-28T20:36:22Z",
+        "value": "Fulfillment confirmed by warehouse"
+      },
+      {
+        "timestamp": "2026-03-31T19:42:35Z",
+        "value": "Customer support call logged"
+      },
+      {
+        "timestamp": "2026-03-11T22:40:40Z",
+        "value": "CRM API - Customer was refunded"
+      }
+    ]
+  },
+  {
+    "order_id": "700011",
+    "order_date": "2026-02-10T00:59:32Z",
+    "mid": "189250002",
+    "card_brand": "visa",
+    "card_last_4": "9213",
+    "card_first_6": "491837",
+    "card_exp_month": "10",
+    "card_exp_year": "2031",
+    "order_amount": 236875,
+    "avs": "m",
+    "cvv": "s",
+    "email": "sam.johnson11@example.com",
+    "phone": "555-716-9480",
+    "refunded": true,
+    "refunded_amount": 236875,
+    "ip_address": "188.127.64.43",
+    "currency": "USD",
+    "processor_auth_code": "146139",
+    "processor_transaction_id": "NMI2008",
+    "billing_first_name": "Sam",
+    "billing_last_name": "Johnson",
+    "billing_street_address_1": "8900 Pine Rd",
+    "billing_street_address_2": "Apt. B",
+    "billing_city": "Austin",
+    "billing_state": "NY",
+    "billing_postcode": "41151",
+    "billing_country": "US",
+    "marketing_source": "Facebook 234",
+    "sub_marketing_sources": [
+      "Age 18-25"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "ups",
+          "tracking_number": "4566465069745",
+          "first_name": "Sam",
+          "last_name": "Johnson",
+          "street_address_1": "14 Elm Street",
+          "street_address_2": "Floor 3",
+          "city": "Chicago",
+          "state": "TX",
+          "postcode": "20548",
+          "country": "DE"
+        }
+      ],
+      "proof": [
+        {
+          "type": "signature capture",
+          "value": "2026-03-29T06:44:32Z"
+        },
+        {
+          "type": "ip match",
+          "value": "2026-01-28T12:43:27Z"
+        },
+        {
+          "type": "shipping confirmation",
+          "value": "2026-04-14T05:10:13Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Digital Course",
+        "price": 206886,
+        "quantity": 5,
+        "sku": "SKU-43-RD-M"
+      },
+      {
+        "id": "1001",
+        "name": "Widget - Black",
+        "price": 230897,
+        "quantity": 5,
+        "sku": "SKU-11-WH-L"
+      },
+      {
+        "id": "1002",
+        "name": "Widget - White",
+        "price": 220851,
+        "quantity": 2,
+        "sku": "SKU-30-RD-M"
+      },
+      {
+        "id": "1003",
+        "name": "Supplement Pack",
+        "price": 86327,
+        "quantity": 5,
+        "sku": "SKU-40-BL-XL"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-02-25T21:06:48Z",
+        "value": "CRM API - Customer was refunded"
+      },
+      {
+        "timestamp": "2026-03-23T14:36:12Z",
+        "value": "Customer support call logged"
+      }
+    ]
+  },
+  {
+    "order_id": "700012",
+    "order_date": "2026-04-12T13:43:42Z",
+    "mid": "447711299",
+    "card_brand": "mastercard",
+    "card_last_4": "5650",
+    "card_first_6": "437182",
+    "card_exp_month": "12",
+    "card_exp_year": "2026",
+    "order_amount": 326932,
+    "avs": "y",
+    "cvv": "m",
+    "email": "sam.brown12@example.com",
+    "phone": "555-241-1698",
+    "refunded": false,
+    "refunded_amount": 0,
+    "ip_address": "179.18.189.12",
+    "currency": "USD",
+    "processor_auth_code": "998103",
+    "processor_transaction_id": "NMI6954",
+    "billing_first_name": "Sam",
+    "billing_last_name": "Brown",
+    "billing_street_address_1": "456 Market St",
+    "billing_street_address_2": "#12A",
+    "billing_city": "Chicago",
+    "billing_state": "MI",
+    "billing_postcode": "60311",
+    "billing_country": "US",
+    "marketing_source": "Google Ads - Brand",
+    "sub_marketing_sources": [
+      "Age 25-34",
+      "Male"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "usps",
+          "tracking_number": "088686200723",
+          "first_name": "Sam",
+          "last_name": "Brown",
+          "street_address_1": "14 Elm Street",
+          "street_address_2": "Unit 5",
+          "city": "Detroit",
+          "state": "CA",
+          "postcode": "43646",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "shipping confirmation",
+          "value": "2026-03-09T18:18:18Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "T-Shirt Large",
+        "price": 16442,
+        "quantity": 4,
+        "sku": "SKU-13-BL-S"
+      },
+      {
+        "id": "1001",
+        "name": "Premium Plan - Monthly",
+        "price": 246059,
+        "quantity": 1,
+        "sku": "SKU-78-WH-S"
+      },
+      {
+        "id": "1002",
+        "name": "T-Shirt Large",
+        "price": 150727,
+        "quantity": 2,
+        "sku": "SKU-65-BK-M"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-03-03T12:50:26Z",
+        "value": "Manual review passed"
+      },
+      {
+        "timestamp": "2026-04-13T22:05:58Z",
+        "value": "Auto-note: subscription renewal"
+      }
+    ],
+    "match": {
+      "chargeback_guid": "cbc_f9f892df32fc7f8151eeb6a54682faf2"
+    }
+  },
+  {
+    "order_id": "700013",
+    "order_date": "2025-12-25T16:15:01Z",
+    "mid": "220014775",
+    "card_brand": "mastercard",
+    "card_last_4": "7588",
+    "card_first_6": "515028",
+    "card_exp_month": "12",
+    "card_exp_year": "2028",
+    "order_amount": 339346,
+    "avs": "m",
+    "cvv": "n",
+    "email": "olivia.wilson13@example.com",
+    "phone": "555-229-6473",
+    "refunded": true,
+    "refunded_amount": 339346,
+    "ip_address": "119.165.227.179",
+    "currency": "USD",
+    "processor_auth_code": "632365",
+    "processor_transaction_id": "NMI4138",
+    "billing_first_name": "Olivia",
+    "billing_last_name": "Wilson",
+    "billing_street_address_1": "789 Oak Ave",
+    "billing_street_address_2": "Unit 5",
+    "billing_city": "Chicago",
+    "billing_state": "WA",
+    "billing_postcode": "30262",
+    "billing_country": "DE",
+    "marketing_source": "Google Ads - Brand",
+    "sub_marketing_sources": [
+      "Age 25-34",
+      "Male"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "fedex",
+          "tracking_number": "2929916111322",
+          "first_name": "Olivia",
+          "last_name": "Wilson",
+          "street_address_1": "123 Sample Address",
+          "street_address_2": "Apt. B",
+          "city": "San Francisco",
+          "state": "NY",
+          "postcode": "60900",
+          "country": "CA"
+        },
+        {
+          "carrier": "usps",
+          "tracking_number": "376564164794",
+          "first_name": "Olivia",
+          "last_name": "Wilson",
+          "street_address_1": "8900 Pine Rd",
+          "street_address_2": "#12A",
+          "city": "Chicago",
+          "state": "IL",
+          "postcode": "65201",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "email opened",
+          "value": "2026-03-21T16:39:07Z"
+        },
+        {
+          "type": "login date",
+          "value": "2026-02-21T00:30:32Z"
+        },
+        {
+          "type": "login date",
+          "value": "2026-02-26T06:00:23Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Premium Plan - Monthly",
+        "price": 222276,
+        "quantity": 4,
+        "sku": "SKU-68-BK-XL"
+      },
+      {
+        "id": "1001",
+        "name": "T-Shirt Large",
+        "price": 96176,
+        "quantity": 3,
+        "sku": "SKU-11-BL-XL"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-04-18T05:16:35Z",
+        "value": "Auto-note: subscription renewal"
+      }
+    ]
+  },
+  {
+    "order_id": "700014",
+    "order_date": "2025-12-19T21:49:08Z",
+    "mid": "220014775",
+    "card_brand": "amex",
+    "card_last_4": "6723",
+    "card_first_6": "519776",
+    "card_exp_month": "04",
+    "card_exp_year": "2031",
+    "order_amount": 183060,
+    "avs": "n",
+    "cvv": "s",
+    "email": "sam.lee14@example.com",
+    "phone": "555-626-3005",
+    "refunded": true,
+    "refunded_amount": 183060,
+    "ip_address": "187.253.158.92",
+    "currency": "CAD",
+    "processor_auth_code": "159368",
+    "processor_transaction_id": "NMI5136",
+    "billing_first_name": "Sam",
+    "billing_last_name": "Lee",
+    "billing_street_address_1": "789 Oak Ave",
+    "billing_street_address_2": "Floor 3",
+    "billing_city": "Austin",
+    "billing_state": "MI",
+    "billing_postcode": "11744",
+    "billing_country": "US",
+    "marketing_source": "Organic",
+    "sub_marketing_sources": [
+      "Returning Customer"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "fedex",
+          "tracking_number": "279528321786",
+          "first_name": "Sam",
+          "last_name": "Lee",
+          "street_address_1": "14 Elm Street",
+          "street_address_2": "#12A",
+          "city": "Chicago",
+          "state": "NY",
+          "postcode": "29171",
+          "country": "US"
+        },
+        {
+          "carrier": "dhl",
+          "tracking_number": "97674727696487363460",
+          "first_name": "Sam",
+          "last_name": "Lee",
+          "street_address_1": "789 Oak Ave",
+          "street_address_2": "Suite 200",
+          "city": "San Francisco",
+          "state": "TX",
+          "postcode": "17479",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "shipping confirmation",
+          "value": "2026-04-02T20:57:26Z"
+        },
+        {
+          "type": "email opened",
+          "value": "2026-04-18T16:50:35Z"
+        },
+        {
+          "type": "login date",
+          "value": "2026-01-27T04:34:10Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "T-Shirt Large",
+        "price": 37615,
+        "quantity": 2,
+        "sku": "SKU-33-BL-L"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-04-07T01:00:14Z",
+        "value": "Auto-note: subscription renewal"
+      }
+    ]
+  },
+  {
+    "order_id": "700015",
+    "order_date": "2025-11-09T04:38:17Z",
+    "mid": "189250003",
+    "card_brand": "visa",
+    "card_last_4": "7185",
+    "card_first_6": "430665",
+    "card_exp_month": "09",
+    "card_exp_year": "2026",
+    "order_amount": 410115,
+    "avs": "u",
+    "cvv": "s",
+    "email": "olivia.wilson15@example.com",
+    "phone": "555-339-3282",
+    "refunded": true,
+    "refunded_amount": 410115,
+    "ip_address": "122.127.143.15",
+    "currency": "EUR",
+    "processor_auth_code": "589783",
+    "processor_transaction_id": "NMI3366",
+    "billing_first_name": "Olivia",
+    "billing_last_name": "Wilson",
+    "billing_street_address_1": "14 Elm Street",
+    "billing_street_address_2": "Suite 200",
+    "billing_city": "Austin",
+    "billing_state": "NY",
+    "billing_postcode": "80718",
+    "billing_country": "GB",
+    "marketing_source": "Facebook 234",
+    "sub_marketing_sources": [
+      "Age 25-34",
+      "Male"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "dhl",
+          "tracking_number": "68349066066939548076",
+          "first_name": "Olivia",
+          "last_name": "Wilson",
+          "street_address_1": "789 Oak Ave",
+          "street_address_2": "Apt. B",
+          "city": "Chicago",
+          "state": "CA",
+          "postcode": "54736",
+          "country": "CA"
+        },
+        {
+          "carrier": "ups",
+          "tracking_number": "445828452596733",
+          "first_name": "Olivia",
+          "last_name": "Wilson",
+          "street_address_1": "789 Oak Ave",
+          "street_address_2": "Suite 200",
+          "city": "Seattle",
+          "state": "IL",
+          "postcode": "21478",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "email opened",
+          "value": "2026-02-27T20:14:45Z"
+        },
+        {
+          "type": "signature capture",
+          "value": "2026-03-13T10:50:46Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Supplement Pack",
+        "price": 319325,
+        "quantity": 1,
+        "sku": "SKU-74-BL-M"
+      },
+      {
+        "id": "1001",
+        "name": "Digital Course",
+        "price": 353412,
+        "quantity": 5,
+        "sku": "SKU-97-BK-M"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-03-08T17:21:08Z",
+        "value": "Auto-note: subscription renewal"
+      }
+    ]
+  },
+  {
+    "order_id": "700016",
+    "order_date": "2025-11-04T13:26:53Z",
+    "mid": "189250003",
+    "card_brand": "amex",
+    "card_last_4": "9209",
+    "card_first_6": "467633",
+    "card_exp_month": "05",
+    "card_exp_year": "2027",
+    "order_amount": 456213,
+    "avs": "s",
+    "cvv": "m",
+    "email": "john.johnson16@example.com",
+    "phone": "555-426-1334",
+    "refunded": true,
+    "refunded_amount": 456213,
+    "ip_address": "111.145.165.149",
+    "currency": "USD",
+    "processor_auth_code": "621944",
+    "processor_transaction_id": "NMI9554",
+    "billing_first_name": "John",
+    "billing_last_name": "Johnson",
+    "billing_street_address_1": "123 Sample Address",
+    "billing_street_address_2": "Apt. B",
+    "billing_city": "Austin",
+    "billing_state": "WA",
+    "billing_postcode": "63038",
+    "billing_country": "CA",
+    "marketing_source": "Facebook 234",
+    "sub_marketing_sources": [
+      "Age 18-25"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "ups",
+          "tracking_number": "75048640698214254793",
+          "first_name": "John",
+          "last_name": "Johnson",
+          "street_address_1": "456 Market St",
+          "street_address_2": "Apt. B",
+          "city": "San Francisco",
+          "state": "IL",
+          "postcode": "83071",
+          "country": "DE"
+        },
+        {
+          "carrier": "dhl",
+          "tracking_number": "68900086633698639741",
+          "first_name": "John",
+          "last_name": "Johnson",
+          "street_address_1": "123 Sample Address",
+          "street_address_2": "Unit 5",
+          "city": "Chicago",
+          "state": "NY",
+          "postcode": "92536",
+          "country": "CA"
+        }
+      ],
+      "proof": [
+        {
+          "type": "signature capture",
+          "value": "2026-02-22T05:00:00Z"
+        },
+        {
+          "type": "email opened",
+          "value": "2026-03-09T04:33:45Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "T-Shirt Large",
+        "price": 380679,
+        "quantity": 1,
+        "sku": "SKU-29-RD-XL"
+      },
+      {
+        "id": "1001",
+        "name": "Widget - White",
+        "price": 197686,
+        "quantity": 4,
+        "sku": "SKU-97-BL-M"
+      },
+      {
+        "id": "1002",
+        "name": "Supplement Pack",
+        "price": 148734,
+        "quantity": 1,
+        "sku": "SKU-51-RD-L"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-04-09T18:51:56Z",
+        "value": "CRM API - Customer was refunded"
+      },
+      {
+        "timestamp": "2026-04-02T08:58:52Z",
+        "value": "Fulfillment confirmed by warehouse"
+      }
+    ]
+  },
+  {
+    "order_id": "700017",
+    "order_date": "2025-12-14T02:16:43Z",
+    "mid": "447711299",
+    "card_brand": "discover",
+    "card_last_4": "6254",
+    "card_first_6": "452541",
+    "card_exp_month": "12",
+    "card_exp_year": "2027",
+    "order_amount": 446763,
+    "avs": "u",
+    "cvv": "m",
+    "email": "alex.nguyen17@example.com",
+    "phone": "555-793-7479",
+    "refunded": false,
+    "refunded_amount": 0,
+    "ip_address": "120.182.53.238",
+    "currency": "USD",
+    "processor_auth_code": "714872",
+    "processor_transaction_id": "NMI1153",
+    "billing_first_name": "Alex",
+    "billing_last_name": "Nguyen",
+    "billing_street_address_1": "14 Elm Street",
+    "billing_street_address_2": "Floor 3",
+    "billing_city": "Seattle",
+    "billing_state": "MI",
+    "billing_postcode": "80274",
+    "billing_country": "US",
+    "marketing_source": "Facebook 234",
+    "sub_marketing_sources": [
+      "Age 25-34",
+      "Male"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "fedex",
+          "tracking_number": "451117354510931",
+          "first_name": "Alex",
+          "last_name": "Nguyen",
+          "street_address_1": "14 Elm Street",
+          "street_address_2": "Apt. B",
+          "city": "New York",
+          "state": "CA",
+          "postcode": "88277",
+          "country": "US"
+        },
+        {
+          "carrier": "fedex",
+          "tracking_number": "500984527497892",
+          "first_name": "Alex",
+          "last_name": "Nguyen",
+          "street_address_1": "123 Sample Address",
+          "street_address_2": "Unit 5",
+          "city": "New York",
+          "state": "NY",
+          "postcode": "59571",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "login date",
+          "value": "2026-04-15T20:26:53Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Supplement Pack",
+        "price": 443539,
+        "quantity": 1,
+        "sku": "SKU-86-BL-S"
+      },
+      {
+        "id": "1001",
+        "name": "Digital Course",
+        "price": 47362,
+        "quantity": 3,
+        "sku": "SKU-50-WH-S"
+      },
+      {
+        "id": "1002",
+        "name": "Digital Course",
+        "price": 265751,
+        "quantity": 4,
+        "sku": "SKU-33-BL-M"
+      },
+      {
+        "id": "1003",
+        "name": "Premium Plan - Monthly",
+        "price": 123474,
+        "quantity": 2,
+        "sku": "SKU-32-BK-L"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-04-16T19:53:47Z",
+        "value": "CRM API - Customer was refunded"
+      },
+      {
+        "timestamp": "2026-04-03T21:05:01Z",
+        "value": "Manual review passed"
+      }
+    ]
+  },
+  {
+    "order_id": "700018",
+    "order_date": "2026-02-02T19:13:20Z",
+    "mid": "189250002",
+    "card_brand": "discover",
+    "card_last_4": "5307",
+    "card_first_6": "497435",
+    "card_exp_month": "05",
+    "card_exp_year": "2029",
+    "order_amount": 76414,
+    "avs": "y",
+    "cvv": "u",
+    "email": "jane.smith18@example.com",
+    "phone": "555-592-7220",
+    "refunded": true,
+    "refunded_amount": 76414,
+    "subscription_cycle": 3,
+    "subscription_parent_id": "461",
+    "ip_address": "62.207.37.235",
+    "currency": "CAD",
+    "processor_auth_code": "113226",
+    "processor_transaction_id": "NMI8666",
+    "billing_first_name": "Jane",
+    "billing_last_name": "Smith",
+    "billing_street_address_1": "456 Market St",
+    "billing_street_address_2": "Apt. B",
+    "billing_city": "New York",
+    "billing_state": "NY",
+    "billing_postcode": "20195",
+    "billing_country": "GB",
+    "marketing_source": "Email Campaign Q2",
+    "sub_marketing_sources": [
+      "Age 45-54",
+      "Premium Tier"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "dhl",
+          "tracking_number": "930093213371",
+          "first_name": "Jane",
+          "last_name": "Smith",
+          "street_address_1": "14 Elm Street",
+          "street_address_2": "#12A",
+          "city": "New York",
+          "state": "TX",
+          "postcode": "29581",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "signature capture",
+          "value": "2026-03-20T09:49:31Z"
+        },
+        {
+          "type": "email opened",
+          "value": "2026-03-14T02:59:38Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Supplement Pack",
+        "price": 14517,
+        "quantity": 3,
+        "sku": "SKU-68-BL-S"
+      },
+      {
+        "id": "1001",
+        "name": "Widget - White",
+        "price": 67498,
+        "quantity": 1,
+        "sku": "SKU-90-WH-XL"
+      },
+      {
+        "id": "1002",
+        "name": "Premium Plan - Monthly",
+        "price": 15821,
+        "quantity": 3,
+        "sku": "SKU-35-RD-XL"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-04-05T06:44:24Z",
+        "value": "Customer support call logged"
+      },
+      {
+        "timestamp": "2026-03-25T08:46:55Z",
+        "value": "Customer support call logged"
+      }
+    ],
+    "match": {
+      "chargeback_guid": "cbc_2a7887cf450642d8329debc22aa340b8"
+    }
+  },
+  {
+    "order_id": "700019",
+    "order_date": "2025-12-15T11:50:22Z",
+    "mid": "311900012",
+    "card_brand": "mastercard",
+    "card_last_4": "4362",
+    "card_first_6": "465100",
+    "card_exp_month": "03",
+    "card_exp_year": "2030",
+    "order_amount": 425511,
+    "avs": "u",
+    "cvv": "m",
+    "email": "jane.lee19@example.com",
+    "phone": "555-267-7081",
+    "refunded": true,
+    "refunded_amount": 425511,
+    "subscription_cycle": 10,
+    "subscription_parent_id": "619",
+    "ip_address": "220.2.92.134",
+    "currency": "EUR",
+    "processor_auth_code": "640672",
+    "processor_transaction_id": "NMI2168",
+    "billing_first_name": "Jane",
+    "billing_last_name": "Lee",
+    "billing_street_address_1": "123 Sample Address",
+    "billing_street_address_2": "Unit 5",
+    "billing_city": "Chicago",
+    "billing_state": "NY",
+    "billing_postcode": "52071",
+    "billing_country": "DE",
+    "marketing_source": "Organic",
+    "sub_marketing_sources": [
+      "New Customer",
+      "Holiday Promo"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "fedex",
+          "tracking_number": "945550921128",
+          "first_name": "Jane",
+          "last_name": "Lee",
+          "street_address_1": "123 Sample Address",
+          "street_address_2": "Apt. B",
+          "city": "Detroit",
+          "state": "IL",
+          "postcode": "35570",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "email opened",
+          "value": "2026-01-28T19:21:15Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Digital Course",
+        "price": 233094,
+        "quantity": 1,
+        "sku": "SKU-54-BK-M"
+      },
+      {
+        "id": "1001",
+        "name": "Widget - Black",
+        "price": 143336,
+        "quantity": 1,
+        "sku": "SKU-69-BL-L"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-04-13T10:24:52Z",
+        "value": "Auto-note: subscription renewal"
+      }
+    ]
+  },
+  {
+    "order_id": "700020",
+    "order_date": "2026-01-09T07:58:47Z",
+    "mid": "311900012",
+    "card_brand": "discover",
+    "card_last_4": "9781",
+    "card_first_6": "558017",
+    "card_exp_month": "09",
+    "card_exp_year": "2026",
+    "order_amount": 119739,
+    "avs": "s",
+    "cvv": "m",
+    "email": "noah.wilson20@example.com",
+    "phone": "555-895-6951",
+    "refunded": false,
+    "refunded_amount": 0,
+    "subscription_cycle": 6,
+    "subscription_parent_id": "420",
+    "ip_address": "62.215.86.184",
+    "currency": "EUR",
+    "processor_auth_code": "983977",
+    "processor_transaction_id": "NMI6253",
+    "billing_first_name": "Noah",
+    "billing_last_name": "Wilson",
+    "billing_street_address_1": "14 Elm Street",
+    "billing_street_address_2": "#12A",
+    "billing_city": "Detroit",
+    "billing_state": "CA",
+    "billing_postcode": "77813",
+    "billing_country": "US",
+    "marketing_source": "Email Campaign Q2",
+    "sub_marketing_sources": [
+      "Age 25-34",
+      "Male"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "usps",
+          "tracking_number": "113262439409908",
+          "first_name": "Noah",
+          "last_name": "Wilson",
+          "street_address_1": "8900 Pine Rd",
+          "street_address_2": "Unit 5",
+          "city": "Chicago",
+          "state": "WA",
+          "postcode": "45839",
+          "country": "DE"
+        },
+        {
+          "carrier": "usps",
+          "tracking_number": "254923615952",
+          "first_name": "Noah",
+          "last_name": "Wilson",
+          "street_address_1": "14 Elm Street",
+          "street_address_2": "#12A",
+          "city": "Seattle",
+          "state": "NY",
+          "postcode": "67668",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "ip match",
+          "value": "2026-03-14T00:14:30Z"
+        },
+        {
+          "type": "shipping confirmation",
+          "value": "2026-03-19T14:45:01Z"
+        },
+        {
+          "type": "email opened",
+          "value": "2026-03-14T23:11:04Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Digital Course",
+        "price": 50878,
+        "quantity": 2,
+        "sku": "SKU-80-RD-XL"
+      },
+      {
+        "id": "1001",
+        "name": "T-Shirt Large",
+        "price": 40005,
+        "quantity": 5,
+        "sku": "SKU-71-BL-L"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-04-05T03:36:36Z",
+        "value": "Fulfillment confirmed by warehouse"
+      }
+    ]
+  },
+  {
+    "order_id": "700021",
+    "order_date": "2026-02-18T03:15:28Z",
+    "mid": "311900012",
+    "card_brand": "amex",
+    "card_last_4": "4666",
+    "card_first_6": "456660",
+    "card_exp_month": "05",
+    "card_exp_year": "2026",
+    "order_amount": 307565,
+    "avs": "y",
+    "cvv": "n",
+    "email": "noah.brown21@example.com",
+    "phone": "555-664-2094",
+    "refunded": false,
+    "refunded_amount": 0,
+    "ip_address": "156.224.90.113",
+    "currency": "CAD",
+    "processor_auth_code": "165029",
+    "processor_transaction_id": "NMI9470",
+    "billing_first_name": "Noah",
+    "billing_last_name": "Brown",
+    "billing_street_address_1": "14 Elm Street",
+    "billing_street_address_2": "Floor 3",
+    "billing_city": "San Francisco",
+    "billing_state": "IL",
+    "billing_postcode": "24318",
+    "billing_country": "GB",
+    "marketing_source": "Google Ads - Brand",
+    "sub_marketing_sources": [
+      "Age 45-54",
+      "Premium Tier"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "dhl",
+          "tracking_number": "612628089926674",
+          "first_name": "Noah",
+          "last_name": "Brown",
+          "street_address_1": "123 Sample Address",
+          "street_address_2": "Apt. B",
+          "city": "Austin",
+          "state": "WA",
+          "postcode": "86786",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "signature capture",
+          "value": "2026-02-06T09:23:54Z"
+        },
+        {
+          "type": "shipping confirmation",
+          "value": "2026-01-30T18:43:24Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Digital Course",
+        "price": 240271,
+        "quantity": 3,
+        "sku": "SKU-55-RD-L"
+      },
+      {
+        "id": "1001",
+        "name": "Supplement Pack",
+        "price": 276038,
+        "quantity": 5,
+        "sku": "SKU-86-BL-L"
+      },
+      {
+        "id": "1002",
+        "name": "Widget - Black",
+        "price": 262106,
+        "quantity": 4,
+        "sku": "SKU-66-RD-M"
+      },
+      {
+        "id": "1003",
+        "name": "T-Shirt Large",
+        "price": 159599,
+        "quantity": 2,
+        "sku": "SKU-65-BL-M"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-02-27T03:29:55Z",
+        "value": "Fulfillment confirmed by warehouse"
+      }
+    ],
+    "match": {
+      "chargeback_guid": "cbc_df36e0097ec8f88a6595fa815689ef77"
+    }
+  },
+  {
+    "order_id": "700022",
+    "order_date": "2026-01-18T03:27:44Z",
+    "mid": "220014775",
+    "card_brand": "mastercard",
+    "card_last_4": "1810",
+    "card_first_6": "477311",
+    "card_exp_month": "12",
+    "card_exp_year": "2028",
+    "order_amount": 180476,
+    "avs": "m",
+    "cvv": "s",
+    "email": "olivia.wilson22@example.com",
+    "phone": "555-746-3562",
+    "refunded": false,
+    "refunded_amount": 0,
+    "ip_address": "135.75.209.131",
+    "currency": "USD",
+    "processor_auth_code": "629412",
+    "processor_transaction_id": "NMI4081",
+    "billing_first_name": "Olivia",
+    "billing_last_name": "Wilson",
+    "billing_street_address_1": "14 Elm Street",
+    "billing_street_address_2": "Suite 200",
+    "billing_city": "Detroit",
+    "billing_state": "IL",
+    "billing_postcode": "84049",
+    "billing_country": "GB",
+    "marketing_source": "Facebook 234",
+    "sub_marketing_sources": [
+      "Age 35-44",
+      "Female"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "dhl",
+          "tracking_number": "736038561452",
+          "first_name": "Olivia",
+          "last_name": "Wilson",
+          "street_address_1": "8900 Pine Rd",
+          "street_address_2": "#12A",
+          "city": "New York",
+          "state": "WA",
+          "postcode": "36023",
+          "country": "CA"
+        }
+      ],
+      "proof": [
+        {
+          "type": "login date",
+          "value": "2026-04-02T08:17:00Z"
+        },
+        {
+          "type": "email opened",
+          "value": "2026-04-07T13:44:44Z"
+        },
+        {
+          "type": "ip match",
+          "value": "2026-02-12T21:58:19Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Widget - Black",
+        "price": 170618,
+        "quantity": 1,
+        "sku": "SKU-97-RD-M"
+      },
+      {
+        "id": "1001",
+        "name": "Digital Course",
+        "price": 62658,
+        "quantity": 3,
+        "sku": "SKU-45-WH-S"
+      },
+      {
+        "id": "1002",
+        "name": "Premium Plan - Monthly",
+        "price": 165008,
+        "quantity": 1,
+        "sku": "SKU-84-BK-L"
+      },
+      {
+        "id": "1003",
+        "name": "Widget - White",
+        "price": 118121,
+        "quantity": 5,
+        "sku": "SKU-59-BK-S"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-02-23T01:13:00Z",
+        "value": "CRM API - Customer was refunded"
+      }
+    ],
+    "match": {
+      "chargeback_guid": "cbc_7930ed5ed49f7f36b34e7c3252f48186"
+    }
+  },
+  {
+    "order_id": "700023",
+    "order_date": "2026-01-11T07:21:30Z",
+    "mid": "220014775",
+    "card_brand": "mastercard",
+    "card_last_4": "7136",
+    "card_first_6": "409152",
+    "card_exp_month": "05",
+    "card_exp_year": "2031",
+    "order_amount": 65138,
+    "avs": "y",
+    "cvv": "u",
+    "email": "liam.smith23@example.com",
+    "phone": "555-924-3554",
+    "refunded": false,
+    "refunded_amount": 0,
+    "ip_address": "62.181.34.24",
+    "currency": "USD",
+    "processor_auth_code": "382767",
+    "processor_transaction_id": "NMI9927",
+    "billing_first_name": "Liam",
+    "billing_last_name": "Smith",
+    "billing_street_address_1": "456 Market St",
+    "billing_street_address_2": "#12A",
+    "billing_city": "Austin",
+    "billing_state": "TX",
+    "billing_postcode": "41481",
+    "billing_country": "US",
+    "marketing_source": "Email Campaign Q2",
+    "sub_marketing_sources": [
+      "Age 35-44",
+      "Female"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "dhl",
+          "tracking_number": "65242869954954517608",
+          "first_name": "Liam",
+          "last_name": "Smith",
+          "street_address_1": "14 Elm Street",
+          "street_address_2": "Apt. B",
+          "city": "Chicago",
+          "state": "IL",
+          "postcode": "84407",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "login date",
+          "value": "2026-03-01T15:45:04Z"
+        },
+        {
+          "type": "ip match",
+          "value": "2026-03-22T03:38:06Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Widget - Black",
+        "price": 37029,
+        "quantity": 3,
+        "sku": "SKU-74-RD-M"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-03-06T04:45:34Z",
+        "value": "Customer support call logged"
+      }
+    ]
+  },
+  {
+    "order_id": "700024",
+    "order_date": "2025-11-10T16:54:53Z",
+    "mid": "189250003",
+    "card_brand": "amex",
+    "card_last_4": "2890",
+    "card_first_6": "407752",
+    "card_exp_month": "06",
+    "card_exp_year": "2031",
+    "order_amount": 148539,
+    "avs": "u",
+    "cvv": "s",
+    "email": "alex.brown24@example.com",
+    "phone": "555-125-8578",
+    "refunded": false,
+    "refunded_amount": 0,
+    "ip_address": "64.217.103.91",
+    "currency": "CAD",
+    "processor_auth_code": "202443",
+    "processor_transaction_id": "NMI3976",
+    "billing_first_name": "Alex",
+    "billing_last_name": "Brown",
+    "billing_street_address_1": "789 Oak Ave",
+    "billing_street_address_2": "Apt. B",
+    "billing_city": "San Francisco",
+    "billing_state": "WA",
+    "billing_postcode": "38729",
+    "billing_country": "DE",
+    "marketing_source": "Facebook 234",
+    "sub_marketing_sources": [
+      "Returning Customer"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "ups",
+          "tracking_number": "13303618572463087208",
+          "first_name": "Alex",
+          "last_name": "Brown",
+          "street_address_1": "8900 Pine Rd",
+          "street_address_2": "Apt. B",
+          "city": "New York",
+          "state": "IL",
+          "postcode": "24573",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "ip match",
+          "value": "2026-03-06T13:52:43Z"
+        },
+        {
+          "type": "signature capture",
+          "value": "2026-01-21T14:25:01Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Premium Plan - Monthly",
+        "price": 138433,
+        "quantity": 1,
+        "sku": "SKU-54-BL-XL"
+      },
+      {
+        "id": "1001",
+        "name": "Premium Plan - Monthly",
+        "price": 132077,
+        "quantity": 4,
+        "sku": "SKU-75-BK-M"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-03-07T20:55:49Z",
+        "value": "Auto-note: subscription renewal"
+      },
+      {
+        "timestamp": "2026-03-20T07:48:04Z",
+        "value": "Fulfillment confirmed by warehouse"
+      }
+    ],
+    "match": {
+      "chargeback_guid": "cbc_48fa83056342ba3387e54e295d8c2a97"
+    }
+  },
+  {
+    "order_id": "700025",
+    "order_date": "2026-04-09T11:53:31Z",
+    "mid": "220014775",
+    "card_brand": "mastercard",
+    "card_last_4": "1811",
+    "card_first_6": "480980",
+    "card_exp_month": "08",
+    "card_exp_year": "2026",
+    "order_amount": 60518,
+    "avs": "n",
+    "cvv": "u",
+    "email": "liam.patel25@example.com",
+    "phone": "555-555-8678",
+    "refunded": false,
+    "refunded_amount": 0,
+    "subscription_cycle": 10,
+    "subscription_parent_id": "381",
+    "ip_address": "75.44.143.19",
+    "currency": "USD",
+    "processor_auth_code": "111339",
+    "processor_transaction_id": "NMI8676",
+    "billing_first_name": "Liam",
+    "billing_last_name": "Patel",
+    "billing_street_address_1": "14 Elm Street",
+    "billing_street_address_2": "Apt. B",
+    "billing_city": "Chicago",
+    "billing_state": "IL",
+    "billing_postcode": "53479",
+    "billing_country": "DE",
+    "marketing_source": "Affiliate - Partner A",
+    "sub_marketing_sources": [
+      "Age 35-44",
+      "Female"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "dhl",
+          "tracking_number": "47330267660703139586",
+          "first_name": "Liam",
+          "last_name": "Patel",
+          "street_address_1": "123 Sample Address",
+          "street_address_2": "Unit 5",
+          "city": "Chicago",
+          "state": "WA",
+          "postcode": "52817",
+          "country": "CA"
+        }
+      ],
+      "proof": [
+        {
+          "type": "shipping confirmation",
+          "value": "2026-03-11T06:27:40Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Premium Plan - Monthly",
+        "price": 15886,
+        "quantity": 1,
+        "sku": "SKU-15-BK-XL"
+      },
+      {
+        "id": "1001",
+        "name": "Widget - Black",
+        "price": 14383,
+        "quantity": 4,
+        "sku": "SKU-64-BL-M"
+      },
+      {
+        "id": "1002",
+        "name": "Premium Plan - Monthly",
+        "price": 39692,
+        "quantity": 5,
+        "sku": "SKU-90-BK-M"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-04-06T08:42:20Z",
+        "value": "Manual review passed"
+      },
+      {
+        "timestamp": "2026-04-15T11:56:20Z",
+        "value": "Manual review passed"
+      },
+      {
+        "timestamp": "2026-04-08T07:04:25Z",
+        "value": "CRM API - Customer was refunded"
+      }
+    ],
+    "match": {
+      "chargeback_guid": "cbc_09d8210be10f2b60ca978868a2691cb5"
+    }
+  },
+  {
+    "order_id": "700026",
+    "order_date": "2026-03-16T03:55:27Z",
+    "mid": "447711299",
+    "card_brand": "visa",
+    "card_last_4": "3094",
+    "card_first_6": "458322",
+    "card_exp_month": "11",
+    "card_exp_year": "2031",
+    "order_amount": 299933,
+    "avs": "s",
+    "cvv": "m",
+    "email": "priya.wilson26@example.com",
+    "phone": "555-250-7095",
+    "refunded": false,
+    "refunded_amount": 0,
+    "subscription_cycle": 9,
+    "subscription_parent_id": "604",
+    "ip_address": "242.107.93.136",
+    "currency": "USD",
+    "processor_auth_code": "692251",
+    "processor_transaction_id": "NMI8231",
+    "billing_first_name": "Priya",
+    "billing_last_name": "Wilson",
+    "billing_street_address_1": "14 Elm Street",
+    "billing_street_address_2": "Unit 5",
+    "billing_city": "Detroit",
+    "billing_state": "NY",
+    "billing_postcode": "33658",
+    "billing_country": "US",
+    "marketing_source": "Affiliate - Partner A",
+    "sub_marketing_sources": [
+      "Age 45-54",
+      "Premium Tier"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "ups",
+          "tracking_number": "616724567958681",
+          "first_name": "Priya",
+          "last_name": "Wilson",
+          "street_address_1": "8900 Pine Rd",
+          "street_address_2": "#12A",
+          "city": "Seattle",
+          "state": "IL",
+          "postcode": "25022",
+          "country": "DE"
+        }
+      ],
+      "proof": [
+        {
+          "type": "email opened",
+          "value": "2026-04-06T22:57:05Z"
+        },
+        {
+          "type": "signature capture",
+          "value": "2026-02-10T08:38:12Z"
+        },
+        {
+          "type": "signature capture",
+          "value": "2026-04-09T09:26:59Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Supplement Pack",
+        "price": 124403,
+        "quantity": 1,
+        "sku": "SKU-57-BK-S"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-03-13T07:21:29Z",
+        "value": "CRM API - Customer was refunded"
+      },
+      {
+        "timestamp": "2026-03-06T09:22:50Z",
+        "value": "CRM API - Customer was refunded"
+      },
+      {
+        "timestamp": "2026-03-12T07:14:41Z",
+        "value": "Customer support call logged"
+      }
+    ]
+  },
+  {
+    "order_id": "700027",
+    "order_date": "2026-04-18T05:43:33Z",
+    "mid": "220014775",
+    "card_brand": "amex",
+    "card_last_4": "8011",
+    "card_first_6": "411404",
+    "card_exp_month": "10",
+    "card_exp_year": "2028",
+    "order_amount": 391321,
+    "avs": "y",
+    "cvv": "u",
+    "email": "alex.garcia27@example.com",
+    "phone": "555-662-6363",
+    "refunded": false,
+    "refunded_amount": 0,
+    "ip_address": "206.155.29.9",
+    "currency": "CAD",
+    "processor_auth_code": "354226",
+    "processor_transaction_id": "NMI5171",
+    "billing_first_name": "Alex",
+    "billing_last_name": "Garcia",
+    "billing_street_address_1": "789 Oak Ave",
+    "billing_street_address_2": "Suite 200",
+    "billing_city": "Chicago",
+    "billing_state": "TX",
+    "billing_postcode": "12789",
+    "billing_country": "GB",
+    "marketing_source": "Organic",
+    "sub_marketing_sources": [
+      "Age 18-25"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "dhl",
+          "tracking_number": "021986852972",
+          "first_name": "Alex",
+          "last_name": "Garcia",
+          "street_address_1": "14 Elm Street",
+          "street_address_2": "Apt. B",
+          "city": "Detroit",
+          "state": "CA",
+          "postcode": "29783",
+          "country": "CA"
+        }
+      ],
+      "proof": [
+        {
+          "type": "signature capture",
+          "value": "2026-04-16T12:46:37Z"
+        },
+        {
+          "type": "email opened",
+          "value": "2026-01-27T16:12:23Z"
+        },
+        {
+          "type": "signature capture",
+          "value": "2026-03-30T14:56:20Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Widget - White",
+        "price": 320458,
+        "quantity": 5,
+        "sku": "SKU-19-RD-L"
+      },
+      {
+        "id": "1001",
+        "name": "T-Shirt Large",
+        "price": 113610,
+        "quantity": 3,
+        "sku": "SKU-26-BK-M"
+      },
+      {
+        "id": "1002",
+        "name": "Widget - White",
+        "price": 189459,
+        "quantity": 4,
+        "sku": "SKU-52-BL-XL"
+      },
+      {
+        "id": "1003",
+        "name": "Premium Plan - Monthly",
+        "price": 165014,
+        "quantity": 1,
+        "sku": "SKU-52-BL-L"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-04-19T06:20:52Z",
+        "value": "Fulfillment confirmed by warehouse"
+      }
+    ]
+  },
+  {
+    "order_id": "700028",
+    "order_date": "2025-12-13T05:28:12Z",
+    "mid": "447711299",
+    "card_brand": "mastercard",
+    "card_last_4": "0558",
+    "card_first_6": "546965",
+    "card_exp_month": "02",
+    "card_exp_year": "2027",
+    "order_amount": 381637,
+    "avs": "s",
+    "cvv": "m",
+    "email": "jane.johnson28@example.com",
+    "phone": "555-471-5613",
+    "refunded": false,
+    "refunded_amount": 0,
+    "subscription_cycle": 4,
+    "subscription_parent_id": "903",
+    "ip_address": "204.241.37.175",
+    "currency": "USD",
+    "processor_auth_code": "418762",
+    "processor_transaction_id": "NMI6595",
+    "billing_first_name": "Jane",
+    "billing_last_name": "Johnson",
+    "billing_street_address_1": "789 Oak Ave",
+    "billing_street_address_2": "#12A",
+    "billing_city": "Chicago",
+    "billing_state": "NY",
+    "billing_postcode": "55931",
+    "billing_country": "GB",
+    "marketing_source": "Organic",
+    "sub_marketing_sources": [
+      "Age 35-44",
+      "Female"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "fedex",
+          "tracking_number": "875889128643795",
+          "first_name": "Jane",
+          "last_name": "Johnson",
+          "street_address_1": "456 Market St",
+          "street_address_2": "Unit 5",
+          "city": "Chicago",
+          "state": "CA",
+          "postcode": "43045",
+          "country": "DE"
+        }
+      ],
+      "proof": [
+        {
+          "type": "email opened",
+          "value": "2026-01-26T03:45:50Z"
+        },
+        {
+          "type": "ip match",
+          "value": "2026-02-05T11:13:37Z"
+        },
+        {
+          "type": "shipping confirmation",
+          "value": "2026-02-05T02:21:26Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Digital Course",
+        "price": 35717,
+        "quantity": 4,
+        "sku": "SKU-50-WH-L"
+      },
+      {
+        "id": "1001",
+        "name": "Premium Plan - Monthly",
+        "price": 286714,
+        "quantity": 1,
+        "sku": "SKU-31-RD-M"
+      },
+      {
+        "id": "1002",
+        "name": "Digital Course",
+        "price": 10719,
+        "quantity": 2,
+        "sku": "SKU-16-BL-XL"
+      },
+      {
+        "id": "1003",
+        "name": "Widget - White",
+        "price": 316293,
+        "quantity": 3,
+        "sku": "SKU-74-BK-M"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-03-05T12:42:10Z",
+        "value": "CRM API - Customer was refunded"
+      }
+    ],
+    "match": {
+      "chargeback_guid": "cbc_1ce5238eae35ba6a5060a579470e9f09"
+    }
+  },
+  {
+    "order_id": "700029",
+    "order_date": "2026-03-28T01:58:25Z",
+    "mid": "311900012",
+    "card_brand": "amex",
+    "card_last_4": "8825",
+    "card_first_6": "554268",
+    "card_exp_month": "09",
+    "card_exp_year": "2027",
+    "order_amount": 49493,
+    "avs": "m",
+    "cvv": "u",
+    "email": "mei.johnson29@example.com",
+    "phone": "555-335-5224",
+    "refunded": true,
+    "refunded_amount": 49493,
+    "subscription_cycle": 12,
+    "subscription_parent_id": "499",
+    "ip_address": "196.9.199.166",
+    "currency": "USD",
+    "processor_auth_code": "783294",
+    "processor_transaction_id": "NMI8424",
+    "billing_first_name": "Mei",
+    "billing_last_name": "Johnson",
+    "billing_street_address_1": "8900 Pine Rd",
+    "billing_street_address_2": "Unit 5",
+    "billing_city": "San Francisco",
+    "billing_state": "WA",
+    "billing_postcode": "79420",
+    "billing_country": "US",
+    "marketing_source": "Google Ads - Brand",
+    "sub_marketing_sources": [
+      "Age 35-44",
+      "Female"
+    ],
+    "evidence": {
+      "shipping_details": [
+        {
+          "carrier": "dhl",
+          "tracking_number": "673927001055",
+          "first_name": "Mei",
+          "last_name": "Johnson",
+          "street_address_1": "456 Market St",
+          "street_address_2": "Unit 5",
+          "city": "Seattle",
+          "state": "CA",
+          "postcode": "29571",
+          "country": "US"
+        }
+      ],
+      "proof": [
+        {
+          "type": "ip match",
+          "value": "2026-02-12T13:27:59Z"
+        },
+        {
+          "type": "ip match",
+          "value": "2026-02-22T22:37:08Z"
+        },
+        {
+          "type": "shipping confirmation",
+          "value": "2026-03-01T23:37:28Z"
+        }
+      ]
+    },
+    "items": [
+      {
+        "id": "1000",
+        "name": "Widget - Black",
+        "price": 43454,
+        "quantity": 1,
+        "sku": "SKU-18-BL-L"
+      }
+    ],
+    "notes": [
+      {
+        "timestamp": "2026-04-05T19:26:22Z",
+        "value": "Manual review passed"
+      }
+    ]
+  }
+]
