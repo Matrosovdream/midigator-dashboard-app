@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1\Order;
 
+use App\Http\Actions\Api\V1\Order\CreateOrderAction;
 use App\Http\Actions\Api\V1\Order\ListOrdersAction;
 use App\Http\Actions\Api\V1\Order\ShowOrderAction;
 use App\Http\Actions\Api\V1\Order\SubmitOrderAction;
@@ -13,6 +14,11 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
     public function index(Request $request, ListOrdersAction $action): JsonResponse
+    {
+        return $action->handle($request);
+    }
+
+    public function store(Request $request, CreateOrderAction $action): JsonResponse
     {
         return $action->handle($request);
     }

@@ -4,6 +4,8 @@ namespace App\Services\Dashboard;
 
 use App\Repositories\Activity\ActivityLogRepo;
 use App\Repositories\Chargeback\ChargebackRepo;
+use App\Repositories\Order\OrderRepo;
+use App\Repositories\Order\OrderValidationRepo;
 use App\Repositories\Prevention\PreventionAlertRepo;
 use App\Repositories\Rdr\RdrCaseRepo;
 use App\Repositories\User\ManagerProfileRepo;
@@ -17,6 +19,8 @@ class DashboardService
         private ChargebackRepo $chargebackRepo,
         private PreventionAlertRepo $preventionRepo,
         private RdrCaseRepo $rdrRepo,
+        private OrderRepo $orderRepo,
+        private OrderValidationRepo $orderValidationRepo,
         private UserRepo $userRepo,
         private ManagerProfileRepo $managerProfileRepo,
         private ActivityLogRepo $activityLogRepo,
@@ -32,14 +36,31 @@ class DashboardService
             $monthStart = now()->startOfMonth();
             $prevMonthStart = now()->subMonth()->startOfMonth();
             $prevMonthEnd = now()->startOfMonth();
+            $last30dStart = now()->subDays(30);
+            $slaCutoff = now()->addDays(2);
 
             $openStages = ['new', 'in_review', 'action_taken', 'responded'];
-            $openChargebacks = $this->chargebackRepo->count(['tenant_id' => $tenantId, 'stage' => ['CONDITION' => 'IN', ...$openStages]]);
-            $activeAlerts = $this->preventionRepo->count(['tenant_id' => $tenantId, 'stage' => ['CONDITION' => 'IN', 'new', 'in_review']]);
-            $openRdr = $this->rdrRepo->count(['tenant_id' => $tenantId, 'stage' => ['CONDITION' => 'IN', 'new', 'in_review']]);
+            $activeAlertStages = ['new', 'in_review'];
 
-            $thisMonth = $this->chargebackRepo->count(['tenant_id' => $tenantId, 'created_at' => ['CONDITION' => 'BETWEEN', $monthStart, now()]]);
-            $lastMonth = $this->chargebackRepo->count(['tenant_id' => $tenantId, 'created_at' => ['CONDITION' => 'BETWEEN', $prevMonthStart, $prevMonthEnd]]);
+            $openChargebacks = $this->chargebackRepo->count(['tenant_id' => $tenantId, 'stage' => ['CONDITION' => 'IN', ...$openStages]]);
+            $activeAlerts = $this->preventionRepo->count(['tenant_id' => $tenantId, 'stage' => ['CONDITION' => 'IN', ...$activeAlertStages]]);
+            $openRdr = $this->rdrRepo->count(['tenant_id' => $tenantId, 'stage' => ['CONDITION' => 'IN', ...$activeAlertStages]]);
+
+            $chargebacksThisMonth = $this->chargebackRepo->count(['tenant_id' => $tenantId, 'created_at' => ['CONDITION' => 'BETWEEN', $monthStart, now()]]);
+            $chargebacksLastMonth = $this->chargebackRepo->count(['tenant_id' => $tenantId, 'created_at' => ['CONDITION' => 'BETWEEN', $prevMonthStart, $prevMonthEnd]]);
+            $chargebacksLast30d = $this->chargebackRepo->count(['tenant_id' => $tenantId, 'created_at' => ['CONDITION' => 'BETWEEN', $last30dStart, now()]]);
+            $preventionsLast30d = $this->preventionRepo->count(['tenant_id' => $tenantId, 'created_at' => ['CONDITION' => 'BETWEEN', $last30dStart, now()]]);
+            $ordersLast30d = $this->orderRepo->count(['tenant_id' => $tenantId, 'created_at' => ['CONDITION' => 'BETWEEN', $last30dStart, now()]]);
+
+            $pendingOrders = $this->orderRepo->count(['tenant_id' => $tenantId, 'refunded' => 0, 'is_hidden' => 0]);
+            $validationsPending = $this->orderValidationRepo->count(['tenant_id' => $tenantId, 'stage' => ['CONDITION' => 'IN', ...$activeAlertStages]]);
+
+            $slaAtRisk = (int) $this->chargebackRepo->getModel()
+                ->where('tenant_id', $tenantId)
+                ->whereIn('stage', $openStages)
+                ->whereNotNull('due_date')
+                ->whereBetween('due_date', [now(), $slaCutoff])
+                ->count();
 
             $won = $this->chargebackRepo->count(['tenant_id' => $tenantId, 'result' => 'won']);
             $lost = $this->chargebackRepo->count(['tenant_id' => $tenantId, 'result' => 'lost']);
@@ -50,17 +71,38 @@ class DashboardService
                 ->where('result', 'pending')
                 ->sum('amount');
 
+            $recentActivity = $this->activityLogRepo->getForTenant($tenantId, 10)['items'] ?? [];
+
             return [
                 'tenant_id' => $tenantId,
-                'open_chargebacks' => $openChargebacks,
-                'active_alerts' => $activeAlerts,
-                'open_rdr_cases' => $openRdr,
-                'chargebacks_this_month' => $thisMonth,
-                'chargebacks_last_month' => $lastMonth,
-                'trend_pct' => $lastMonth ? round((($thisMonth - $lastMonth) / $lastMonth) * 100, 1) : null,
+                'chargebacks' => [
+                    'open' => $openChargebacks,
+                    'this_month' => $chargebacksThisMonth,
+                    'last_month' => $chargebacksLastMonth,
+                    'last_30d' => $chargebacksLast30d,
+                    'sla_at_risk' => $slaAtRisk,
+                    'amount_at_risk' => $amountAtRisk,
+                    'trend_pct' => $chargebacksLastMonth ? round((($chargebacksThisMonth - $chargebacksLastMonth) / $chargebacksLastMonth) * 100, 1) : null,
+                ],
+                'preventions' => [
+                    'open' => $activeAlerts,
+                    'last_30d' => $preventionsLast30d,
+                ],
+                'rdr' => [
+                    'open' => $openRdr,
+                    'total' => $this->rdrRepo->count(['tenant_id' => $tenantId]),
+                ],
+                'orders' => [
+                    'pending' => $pendingOrders,
+                    'last_30d' => $ordersLast30d,
+                    'total' => $this->orderRepo->count(['tenant_id' => $tenantId]),
+                ],
+                'validations' => [
+                    'pending' => $validationsPending,
+                ],
                 'win_rate' => $resolved ? round(($won / $resolved) * 100, 1) : null,
                 'resolved' => $resolved,
-                'amount_at_risk' => $amountAtRisk,
+                'recent_activity' => $recentActivity,
             ];
         });
     }
@@ -99,15 +141,14 @@ class DashboardService
     {
         return [
             'tenant_id' => null,
-            'open_chargebacks' => 0,
-            'active_alerts' => 0,
-            'open_rdr_cases' => 0,
-            'chargebacks_this_month' => 0,
-            'chargebacks_last_month' => 0,
-            'trend_pct' => null,
+            'chargebacks' => ['open' => 0, 'this_month' => 0, 'last_month' => 0, 'last_30d' => 0, 'sla_at_risk' => 0, 'amount_at_risk' => 0, 'trend_pct' => null],
+            'preventions' => ['open' => 0, 'last_30d' => 0],
+            'rdr' => ['open' => 0, 'total' => 0],
+            'orders' => ['pending' => 0, 'last_30d' => 0, 'total' => 0],
+            'validations' => ['pending' => 0],
             'win_rate' => null,
             'resolved' => 0,
-            'amount_at_risk' => 0,
+            'recent_activity' => [],
         ];
     }
 }

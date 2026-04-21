@@ -4,6 +4,7 @@ import { computed } from 'vue';
 import AppFooter from './AppFooter.vue';
 import AppSidebar from './AppSidebar.vue';
 import AppTopbar from './AppTopbar.vue';
+import ImpersonationBanner from './ImpersonationBanner.vue';
 
 const { layoutConfig, layoutState, hideMobileMenu } = useLayout();
 
@@ -23,6 +24,7 @@ const containerClass = computed(() => {
         <AppTopbar />
         <AppSidebar />
         <div class="layout-main-container">
+            <ImpersonationBanner />
             <div class="layout-main">
                 <router-view />
             </div>

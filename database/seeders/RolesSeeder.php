@@ -14,20 +14,48 @@ class RolesSeeder extends Seeder
         $tenants = Tenant::all();
 
         $managerRights = [
-            'chargebacks.view', 'chargebacks.edit', 'chargebacks.stage_change',
-            'preventions.view', 'preventions.edit', 'preventions.resolve', 'preventions.stage_change',
-            'orders.view', 'orders.edit',
+            'chargebacks.view', 'chargebacks.edit', 'chargebacks.stage_change', 'chargebacks.assign',
+            'preventions.view', 'preventions.edit', 'preventions.resolve', 'preventions.stage_change', 'preventions.assign',
+            'orders.view', 'orders.create', 'orders.edit', 'orders.submit',
             'order_validations.view', 'order_validations.edit', 'order_validations.stage_change',
-            'rdr.view', 'rdr.edit', 'rdr.stage_change',
+            'rdr.view', 'rdr.edit', 'rdr.stage_change', 'rdr.assign',
             'comments.view', 'comments.create',
             'emails.view', 'emails.send',
             'dashboard.view',
             'activity_log.view',
             'notifications.manage',
+            'export.run',
+            'users.view',
+            'evidence.view', 'evidence.upload', 'evidence.delete',
+        ];
+
+        $analystRights = [
+            'chargebacks.view', 'chargebacks.edit',
+            'preventions.view', 'preventions.edit',
+            'orders.view',
+            'order_validations.view', 'order_validations.edit',
+            'rdr.view', 'rdr.edit',
+            'comments.view', 'comments.create',
+            'dashboard.view',
+            'export.run',
+            'evidence.view', 'evidence.upload',
+        ];
+
+        $viewerRights = [
+            'chargebacks.view',
+            'preventions.view',
+            'orders.view',
+            'order_validations.view',
+            'rdr.view',
+            'comments.view',
+            'dashboard.view',
+            'evidence.view',
         ];
 
         $allRightIds = Right::pluck('id')->all();
         $managerRightIds = Right::whereIn('slug', $managerRights)->pluck('id')->all();
+        $analystRightIds = Right::whereIn('slug', $analystRights)->pluck('id')->all();
+        $viewerRightIds = Right::whereIn('slug', $viewerRights)->pluck('id')->all();
 
         foreach ($tenants as $tenant) {
             $admin = Role::updateOrCreate(
@@ -49,6 +77,26 @@ class RolesSeeder extends Seeder
                 ],
             );
             $manager->rights()->sync($managerRightIds);
+
+            $analyst = Role::updateOrCreate(
+                ['tenant_id' => $tenant->id, 'slug' => 'analyst'],
+                [
+                    'name' => 'Analyst',
+                    'description' => 'Works cases but cannot assign or change stages owned by managers.',
+                    'is_system' => true,
+                ],
+            );
+            $analyst->rights()->sync($analystRightIds);
+
+            $viewer = Role::updateOrCreate(
+                ['tenant_id' => $tenant->id, 'slug' => 'viewer'],
+                [
+                    'name' => 'Viewer',
+                    'description' => 'Read-only access to cases and dashboard.',
+                    'is_system' => true,
+                ],
+            );
+            $viewer->rights()->sync($viewerRightIds);
         }
     }
 }

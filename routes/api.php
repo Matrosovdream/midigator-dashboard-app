@@ -8,4 +8,7 @@ Route::prefix('v1')
         foreach (glob(__DIR__.'/api/v1/*.php') as $file) {
             require $file;
         }
+        foreach (glob(__DIR__.'/api/v1/*/*.php') as $file) {
+            require $file;
+        }
     });

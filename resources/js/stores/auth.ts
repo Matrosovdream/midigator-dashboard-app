@@ -13,12 +13,37 @@ export interface AuthUser {
     rights: string[];
 }
 
+export interface Impersonator {
+    id: number;
+    name: string;
+    email: string;
+}
+
 export const useAuthStore = defineStore('auth', () => {
     const user = ref<AuthUser | null>(null);
+    const impersonator = ref<Impersonator | null>(null);
     const loading = ref(false);
     const error = ref<string | null>(null);
 
     const isAuthenticated = computed(() => user.value !== null);
+    const isImpersonating = computed(() => impersonator.value !== null);
+
+    const isPlatformAdmin = computed(() => !!user.value?.is_platform_admin && !isImpersonating.value);
+
+    function hasRole(slug: string): boolean {
+        return !!user.value?.roles?.some((r) => r.slug === slug);
+    }
+
+    const isManager = computed(() => {
+        if (!user.value || isPlatformAdmin.value) return false;
+        return hasRole('manager') && !hasRole('tenant-admin');
+    });
+
+    const persona = computed<'platform' | 'manager' | 'tenant'>(() => {
+        if (isPlatformAdmin.value) return 'platform';
+        if (isManager.value) return 'manager';
+        return 'tenant';
+    });
 
     function can(right: string): boolean {
         if (!user.value) return false;
@@ -33,6 +58,7 @@ export const useAuthStore = defineStore('auth', () => {
             await ensureCsrf();
             const { data } = await api.post('/api/v1/auth/login', { email, password });
             user.value = data.user as AuthUser;
+            impersonator.value = null;
         } catch (e: any) {
             error.value = e?.response?.data?.message ?? 'Login failed';
             throw e;
@@ -48,6 +74,7 @@ export const useAuthStore = defineStore('auth', () => {
             await ensureCsrf();
             const { data } = await api.post('/api/v1/auth/login-pin', { pin });
             user.value = data.user as AuthUser;
+            impersonator.value = null;
         } catch (e: any) {
             error.value = e?.response?.data?.message ?? 'Login failed';
             throw e;
@@ -60,8 +87,10 @@ export const useAuthStore = defineStore('auth', () => {
         try {
             const { data } = await api.get('/api/v1/auth/me');
             user.value = data.user as AuthUser;
+            impersonator.value = (data.impersonator as Impersonator | null) ?? null;
         } catch {
             user.value = null;
+            impersonator.value = null;
         }
     }
 
@@ -70,8 +99,40 @@ export const useAuthStore = defineStore('auth', () => {
             await api.post('/api/v1/auth/logout');
         } finally {
             user.value = null;
+            impersonator.value = null;
         }
     }
 
-    return { user, loading, error, isAuthenticated, can, login, loginWithPin, fetchMe, logout };
+    async function startImpersonation(userId: number): Promise<void> {
+        await ensureCsrf();
+        const { data } = await api.post(`/api/v1/platform/impersonate/${userId}`);
+        user.value = data.user as AuthUser;
+        impersonator.value = (data.impersonator as Impersonator | null) ?? null;
+    }
+
+    async function stopImpersonation(): Promise<void> {
+        const { data } = await api.post('/api/v1/platform/impersonate/stop');
+        user.value = data.user as AuthUser;
+        impersonator.value = null;
+    }
+
+    return {
+        user,
+        impersonator,
+        loading,
+        error,
+        isAuthenticated,
+        isImpersonating,
+        isPlatformAdmin,
+        isManager,
+        persona,
+        hasRole,
+        can,
+        login,
+        loginWithPin,
+        fetchMe,
+        logout,
+        startImpersonation,
+        stopImpersonation,
+    };
 });

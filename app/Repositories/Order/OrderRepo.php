@@ -4,6 +4,7 @@ namespace App\Repositories\Order;
 
 use App\Models\Order;
 use App\Repositories\AbstractRepo;
+use Illuminate\Support\Str;
 
 class OrderRepo extends AbstractRepo
 {
@@ -36,6 +37,14 @@ class OrderRepo extends AbstractRepo
         ]);
     }
 
+    public function beforeCreate($data)
+    {
+        if (empty($data['order_guid'])) {
+            $data['order_guid'] = (string) Str::uuid();
+        }
+        return $data;
+    }
+
     public function mapItem($item)
     {
         if (empty($item)) {
@@ -56,6 +65,9 @@ class OrderRepo extends AbstractRepo
             'refunded_amount' => $item->refunded_amount !== null ? (int) $item->refunded_amount : null,
             'is_hidden' => (bool) $item->is_hidden,
             'order_date' => $item->order_date,
+            'submission_status' => $item->submission_status,
+            'submission_error' => $item->submission_error,
+            'submitted_at' => $item->submitted_at,
             'Model' => $item,
         ];
     }

@@ -32,6 +32,37 @@ class ActivityLogRepo extends AbstractRepo
         return $this->getAll(['tenant_id' => $tenantId], $paginate, ['created_at' => 'desc']);
     }
 
+    public function getRecent(int $perPage = 20): array
+    {
+        $items = $this->model
+            ->with(['user', 'tenant'])
+            ->orderBy('created_at', 'desc')
+            ->paginate($perPage);
+
+        return $this->mapItems($items);
+    }
+
+    public function getAllCrossTenant(array $filter = [], int $perPage = 50): array
+    {
+        $search = $filter['search'] ?? null;
+        unset($filter['search']);
+
+        $query = $this->model->with(['user', 'tenant']);
+        $query = $this->applyFilter($query, $filter);
+
+        if (!empty($search)) {
+            $like = '%'.$search.'%';
+            $query->where(function ($q) use ($like) {
+                $q->where('action', 'LIKE', $like)
+                    ->orWhere('loggable_type', 'LIKE', $like);
+            });
+        }
+
+        $query->orderBy('created_at', 'desc');
+
+        return $this->mapItems($query->paginate($perPage));
+    }
+
     public function getForModel(Model $target)
     {
         $items = $this->model
@@ -56,6 +87,9 @@ class ActivityLogRepo extends AbstractRepo
             'user_id' => $item->user_id,
             'user' => $item->relationLoaded('user') && $item->user
                 ? ['id' => $item->user->id, 'name' => $item->user->name]
+                : null,
+            'tenant' => $item->relationLoaded('tenant') && $item->tenant
+                ? ['id' => $item->tenant->id, 'name' => $item->tenant->name]
                 : null,
             'loggable_type' => $item->loggable_type,
             'loggable_id' => $item->loggable_id,
