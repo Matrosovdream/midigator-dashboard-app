@@ -4,16 +4,29 @@ import Button from 'primevue/button';
 import Column from 'primevue/column';
 import DataTable from 'primevue/datatable';
 import FileUpload, { type FileUploadSelectEvent } from 'primevue/fileupload';
-import { ref } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 
 const props = defineProps<{
-    targetType: 'chargeback' | 'prevention' | 'rdr';
+    targetType: 'chargeback' | 'prevention' | 'rdr' | 'order';
     targetId: number | string;
-    items: { id: number; name: string; url?: string; uploaded_at: string }[];
+    initial?: any[];
 }>();
-const emit = defineEmits<{ changed: [] }>();
 
+const items = ref<any[]>([]);
 const uploading = ref(false);
+
+function baseUrl(): string {
+    return `/api/v1/${props.targetType}/${props.targetId}/evidence`;
+}
+
+async function load() {
+    try {
+        const { data } = await api.get(baseUrl());
+        items.value = data.items ?? [];
+    } catch {
+        items.value = [];
+    }
+}
 
 async function onSelect(event: FileUploadSelectEvent) {
     const files = event.files as File[];
@@ -23,11 +36,9 @@ async function onSelect(event: FileUploadSelectEvent) {
         for (const file of files) {
             const form = new FormData();
             form.append('file', file);
-            form.append('target_type', props.targetType);
-            form.append('target_id', String(props.targetId));
-            await api.post('/api/v1/evidence', form, { headers: { 'Content-Type': 'multipart/form-data' } });
+            await api.post(baseUrl(), form, { headers: { 'Content-Type': 'multipart/form-data' } });
         }
-        emit('changed');
+        await load();
     } finally {
         uploading.value = false;
     }
@@ -36,8 +47,21 @@ async function onSelect(event: FileUploadSelectEvent) {
 async function remove(id: number) {
     if (!confirm('Remove this file?')) return;
     await api.delete(`/api/v1/evidence/${id}`);
-    emit('changed');
+    await load();
 }
+
+watch(
+    () => props.targetId,
+    () => {
+        if (props.initial?.length) items.value = props.initial;
+        else load();
+    },
+);
+
+onMounted(() => {
+    if (props.initial?.length) items.value = props.initial;
+    else load();
+});
 </script>
 
 <template>
@@ -50,7 +74,10 @@ async function remove(id: number) {
                     <span v-else>{{ data.name }}</span>
                 </template>
             </Column>
-            <Column header="Uploaded" style="width: 14rem">
+            <Column header="Uploaded by" style="width: 12rem">
+                <template #body="{ data }">{{ data.uploader?.name ?? '—' }}</template>
+            </Column>
+            <Column header="When" style="width: 14rem">
                 <template #body="{ data }">{{ data.uploaded_at ? new Date(data.uploaded_at).toLocaleString() : '—' }}</template>
             </Column>
             <Column header="" style="width: 5rem">

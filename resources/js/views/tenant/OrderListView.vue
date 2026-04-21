@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useSavedFilters } from '@/composables/useSavedFilters';
 import api from '@/lib/api';
+import { useAuthStore } from '@/stores/auth';
 import Button from 'primevue/button';
 import Column from 'primevue/column';
 import DataTable, { type DataTablePageEvent } from 'primevue/datatable';
@@ -14,15 +15,17 @@ import { useRouter } from 'vue-router';
 
 interface Order {
     id: number;
-    order_number: string | null;
-    amount: number | null;
+    order_id: string | null;
+    order_amount: number | null;
     currency: string | null;
-    status: string | null;
     mid: string | null;
-    created_at: string | null;
+    email: string | null;
+    submission_status: string | null;
+    order_date: string | null;
 }
 
 const router = useRouter();
+const auth = useAuthStore();
 const rows = ref<Order[]>([]);
 const loading = ref(false);
 const totalRecords = ref(0);
@@ -66,17 +69,19 @@ function resetAndLoad() {
     load();
 }
 
+function goCreate() {
+    router.push({ name: 'tenant.orders.create' });
+}
+
 function goShow(id: number) {
     router.push({ name: 'tenant.orders.show', params: { id } });
 }
 
-function statusSeverity(status: string | null): 'success' | 'warn' | 'danger' | 'secondary' | 'info' {
-    if (!status) return 'secondary';
-    const s = status.toLowerCase();
-    if (['approved', 'captured', 'completed', 'paid'].includes(s)) return 'success';
-    if (['pending', 'processing'].includes(s)) return 'warn';
-    if (['declined', 'failed', 'chargeback'].includes(s)) return 'danger';
-    return 'info';
+function submissionSeverity(status: string | null): 'success' | 'warn' | 'danger' | 'secondary' {
+    if (status === 'submitted') return 'success';
+    if (status === 'failed') return 'danger';
+    if (status === 'pending') return 'warn';
+    return 'secondary';
 }
 
 onMounted(load);
@@ -89,6 +94,7 @@ onMounted(load);
                 <div class="font-semibold text-2xl">Orders</div>
                 <p class="text-muted-color m-0">All orders for your tenant.</p>
             </div>
+            <Button v-if="auth.can('orders.create')" label="New Order" icon="pi pi-plus" @click="goCreate" />
         </div>
 
         <div class="flex flex-col md:flex-row gap-3 mb-4">
@@ -121,29 +127,28 @@ onMounted(load);
             @row-click="(e: any) => goShow(e.data.id)"
         >
             <template #empty>No orders found.</template>
-
-            <Column field="order_number" header="Order #">
+            <Column field="order_id" header="Order #">
                 <template #body="{ data }">
-                    <span class="font-mono">{{ data.order_number ?? `#${data.id}` }}</span>
+                    <span class="font-mono">{{ data.order_id ?? `#${data.id}` }}</span>
                 </template>
             </Column>
             <Column header="Amount" style="width: 10rem">
                 <template #body="{ data }">
-                    <span v-if="data.amount != null">{{ Number(data.amount).toFixed(2) }} {{ data.currency ?? '' }}</span>
+                    <span v-if="data.order_amount != null">{{ Number(data.order_amount).toFixed(0) }} {{ data.currency ?? '' }}</span>
                     <span v-else class="text-muted-color">—</span>
                 </template>
             </Column>
             <Column field="mid" header="MID" style="width: 10rem">
                 <template #body="{ data }">{{ data.mid ?? '—' }}</template>
             </Column>
-            <Column header="Status" style="width: 10rem">
+            <Column header="Submission" style="width: 10rem">
                 <template #body="{ data }">
-                    <Tag :value="data.status ?? '—'" :severity="statusSeverity(data.status)" />
+                    <Tag :value="data.submission_status ?? 'pending'" :severity="submissionSeverity(data.submission_status)" />
                 </template>
             </Column>
-            <Column field="created_at" header="Created" style="width: 12rem">
+            <Column field="order_date" header="Order date" style="width: 12rem">
                 <template #body="{ data }">
-                    <span v-if="data.created_at">{{ new Date(data.created_at).toLocaleString() }}</span>
+                    <span v-if="data.order_date">{{ new Date(data.order_date).toLocaleString() }}</span>
                     <span v-else class="text-muted-color">—</span>
                 </template>
             </Column>

@@ -5,14 +5,16 @@ import Button from 'primevue/button';
 import Card from 'primevue/card';
 import Column from 'primevue/column';
 import DataTable from 'primevue/datatable';
+import Message from 'primevue/message';
 import Tag from 'primevue/tag';
 import Timeline from 'primevue/timeline';
-import { onMounted, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
 const route = useRoute();
 const router = useRouter();
 const loading = ref(false);
+const submitting = ref(false);
 const data = ref<any>(null);
 
 async function load() {
@@ -28,9 +30,26 @@ async function load() {
 }
 
 async function submit() {
-    await api.post(`/api/v1/orders/${route.params.id}/submit`);
-    load();
+    submitting.value = true;
+    try {
+        const { data: res } = await api.post(`/api/v1/orders/${route.params.id}/submit`);
+        if (res.record) data.value = { ...data.value, ...res.record };
+        else load();
+    } catch {
+        load();
+    } finally {
+        submitting.value = false;
+    }
 }
+
+function submissionSeverity(status: string | null): 'success' | 'warn' | 'danger' | 'secondary' {
+    if (status === 'submitted') return 'success';
+    if (status === 'failed') return 'danger';
+    if (status === 'pending') return 'warn';
+    return 'secondary';
+}
+
+const canRetry = computed(() => data.value?.submission_status !== 'submitted');
 
 onMounted(load);
 </script>
@@ -41,10 +60,17 @@ onMounted(load);
             <div class="card !mb-0 flex justify-between items-center">
                 <div>
                     <Button icon="pi pi-arrow-left" text @click="router.push({ name: 'tenant.orders.index' })" />
-                    <span class="font-semibold text-2xl ml-2">Order #{{ data?.order_number ?? route.params.id }}</span>
+                    <span class="font-semibold text-2xl ml-2">Order #{{ data?.order_id ?? route.params.id }}</span>
+                    <Tag v-if="data?.submission_status" :value="data.submission_status" :severity="submissionSeverity(data.submission_status)" class="ml-3" />
                 </div>
-                <Button label="Submit" icon="pi pi-send" @click="submit" />
+                <Button v-if="canRetry" :label="data?.submission_status === 'failed' ? 'Retry submission' : 'Submit to Midigator'" icon="pi pi-send" :loading="submitting" @click="submit" />
             </div>
+        </div>
+
+        <div class="col-span-12">
+            <Message v-if="data?.submission_status === 'failed'" severity="error" :closable="false">
+                Midigator rejected this order: <span class="font-mono">{{ data.submission_error ?? 'Unknown error' }}</span>
+            </Message>
         </div>
 
         <div class="col-span-12 xl:col-span-8">
@@ -54,12 +80,12 @@ onMounted(load);
                     <div v-if="loading" class="text-muted-color">Loading…</div>
                     <div v-else-if="!data" class="text-muted-color">No data.</div>
                     <div v-else class="grid grid-cols-2 gap-3">
-                        <div><span class="text-muted-color text-xs">Amount</span><div>{{ data.amount }} {{ data.currency }}</div></div>
-                        <div><span class="text-muted-color text-xs">Status</span><div><Tag :value="data.status ?? '—'" /></div></div>
+                        <div><span class="text-muted-color text-xs">Amount</span><div>{{ data.order_amount }} {{ data.currency }}</div></div>
+                        <div><span class="text-muted-color text-xs">Submission</span><div><Tag :value="data.submission_status ?? '—'" :severity="submissionSeverity(data.submission_status)" /></div></div>
                         <div><span class="text-muted-color text-xs">MID</span><div>{{ data.mid ?? '—' }}</div></div>
-                        <div><span class="text-muted-color text-xs">Customer</span><div>{{ data.customer_name ?? '—' }}</div></div>
-                        <div><span class="text-muted-color text-xs">Email</span><div>{{ data.customer_email ?? '—' }}</div></div>
-                        <div><span class="text-muted-color text-xs">Created</span><div>{{ data.created_at ? new Date(data.created_at).toLocaleString() : '—' }}</div></div>
+                        <div><span class="text-muted-color text-xs">Email</span><div>{{ data.email ?? '—' }}</div></div>
+                        <div><span class="text-muted-color text-xs">Order date</span><div>{{ data.order_date ? new Date(data.order_date).toLocaleString() : '—' }}</div></div>
+                        <div><span class="text-muted-color text-xs">Submitted at</span><div>{{ data.submitted_at ? new Date(data.submitted_at).toLocaleString() : '—' }}</div></div>
                     </div>
                 </template>
             </Card>

@@ -105,6 +105,12 @@ const routes: RouteRecordRaw[] = [
                 meta: { requiresTenantUser: true, right: 'orders.view' },
             },
             {
+                path: 'orders/new',
+                name: 'tenant.orders.create',
+                component: () => import('@/views/tenant/OrderFormView.vue'),
+                meta: { requiresTenantUser: true, right: 'orders.create' },
+            },
+            {
                 path: 'orders/:id',
                 name: 'tenant.orders.show',
                 component: () => import('@/views/tenant/OrderDetailView.vue'),

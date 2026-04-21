@@ -27,6 +27,7 @@ class RightsSeeder extends Seeder
 
             // orders
             ['orders.view', 'View orders', 'View orders'],
+            ['orders.create', 'Create orders', 'Create new orders and submit to Midigator'],
             ['orders.edit', 'Edit orders', 'Edit order custom fields'],
             ['orders.hide', 'Hide orders', 'Hide/unhide orders'],
             ['orders.submit', 'Submit orders', 'Submit order data to Midigator API'],
@@ -80,6 +81,14 @@ class RightsSeeder extends Seeder
 
             // notifications
             ['notifications.manage', 'Manage notifications', 'Manage own notification preferences'],
+
+            // evidence
+            ['evidence.view', 'View evidence', 'View evidence files attached to cases'],
+            ['evidence.upload', 'Upload evidence', 'Upload evidence files to cases'],
+            ['evidence.delete', 'Delete evidence', 'Delete evidence files from cases'],
+
+            // export
+            ['export.run', 'Run exports', 'Export CSV extracts for tenant data'],
         ];
 
         foreach ($rights as [$slug, $name, $description]) {

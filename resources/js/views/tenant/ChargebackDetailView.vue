@@ -79,11 +79,9 @@ onMounted(load);
                 <template #title>Evidence</template>
                 <template #content>
                     <EvidenceUploader
-                        v-if="data"
                         target-type="chargeback"
                         :target-id="route.params.id as string"
-                        :items="data.evidence ?? []"
-                        @changed="load"
+                        :initial="data?.evidence"
                     />
                 </template>
             </Card>

@@ -13,12 +13,14 @@ export function useCaseComments(targetType: string, targetId: () => number | str
     const draft = ref('');
     const submitting = ref(false);
 
+    function baseUrl(): string {
+        return `/api/v1/${targetType}/${targetId()}/comments`;
+    }
+
     async function fetch() {
         try {
-            const { data } = await api.get('/api/v1/comments', {
-                params: { target_type: targetType, target_id: targetId() },
-            });
-            comments.value = data.items ?? [];
+            const { data } = await api.get(baseUrl());
+            comments.value = (data.items ?? []) as CaseComment[];
         } catch {
             comments.value = [];
         }
@@ -29,7 +31,7 @@ export function useCaseComments(targetType: string, targetId: () => number | str
         if (!body) return;
         submitting.value = true;
         try {
-            await api.post('/api/v1/comments', { target_type: targetType, target_id: targetId(), body });
+            await api.post(baseUrl(), { body });
             draft.value = '';
             await fetch();
         } finally {

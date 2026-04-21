@@ -16,7 +16,7 @@ class RolesSeeder extends Seeder
         $managerRights = [
             'chargebacks.view', 'chargebacks.edit', 'chargebacks.stage_change', 'chargebacks.assign',
             'preventions.view', 'preventions.edit', 'preventions.resolve', 'preventions.stage_change', 'preventions.assign',
-            'orders.view', 'orders.edit',
+            'orders.view', 'orders.create', 'orders.edit', 'orders.submit',
             'order_validations.view', 'order_validations.edit', 'order_validations.stage_change',
             'rdr.view', 'rdr.edit', 'rdr.stage_change', 'rdr.assign',
             'comments.view', 'comments.create',
@@ -26,6 +26,7 @@ class RolesSeeder extends Seeder
             'notifications.manage',
             'export.run',
             'users.view',
+            'evidence.view', 'evidence.upload', 'evidence.delete',
         ];
 
         $analystRights = [
@@ -37,6 +38,7 @@ class RolesSeeder extends Seeder
             'comments.view', 'comments.create',
             'dashboard.view',
             'export.run',
+            'evidence.view', 'evidence.upload',
         ];
 
         $viewerRights = [
@@ -47,6 +49,7 @@ class RolesSeeder extends Seeder
             'rdr.view',
             'comments.view',
             'dashboard.view',
+            'evidence.view',
         ];
 
         $allRightIds = Right::pluck('id')->all();
