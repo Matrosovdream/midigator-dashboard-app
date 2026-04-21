@@ -230,6 +230,44 @@ const routes: RouteRecordRaw[] = [
                 component: () => import('@/views/tenant/PreferencesView.vue'),
                 meta: { requiresTenantUser: true },
             },
+
+            // ---------- Manager dashboard (users with the "manager" role) ----------
+            {
+                path: 'manager',
+                name: 'manager.home',
+                component: () => import('@/views/manager/ManagerHomeView.vue'),
+                meta: { requiresManager: true, right: 'dashboard.view' },
+            },
+            {
+                path: 'manager/team',
+                name: 'manager.team',
+                component: () => import('@/views/manager/ManagerTeamView.vue'),
+                meta: { requiresManager: true, right: 'managers.view_profiles' },
+            },
+            {
+                path: 'manager/assignments',
+                name: 'manager.assignments',
+                component: () => import('@/views/manager/ManagerAssignmentsView.vue'),
+                meta: { requiresManager: true, right: 'chargebacks.assign' },
+            },
+            {
+                path: 'manager/approvals',
+                name: 'manager.approvals',
+                component: () => import('@/views/manager/ManagerApprovalsView.vue'),
+                meta: { requiresManager: true, right: 'chargebacks.stage_change' },
+            },
+            {
+                path: 'manager/performance',
+                name: 'manager.performance',
+                component: () => import('@/views/tenant/ManagerProfilesView.vue'),
+                meta: { requiresManager: true, right: 'dashboard.manager_performance' },
+            },
+            {
+                path: 'manager/activity',
+                name: 'manager.activity',
+                component: () => import('@/views/manager/ManagerActivityView.vue'),
+                meta: { requiresManager: true, right: 'activity_log.view_all' },
+            },
         ],
     },
     { path: '/:pathMatch(.*)*', redirect: { name: 'login' } },
@@ -265,6 +303,16 @@ router.beforeEach(async (to) => {
     if (to.meta.requiresTenantUser) {
         // Platform admins that aren't impersonating don't belong on tenant pages
         if (auth.user?.is_platform_admin && !auth.isImpersonating) {
+            return { name: 'dashboard' };
+        }
+        const needed = to.meta.right as string | undefined;
+        if (needed && !auth.can(needed)) {
+            return { name: 'dashboard' };
+        }
+    }
+
+    if (to.meta.requiresManager) {
+        if (!auth.isManager) {
             return { name: 'dashboard' };
         }
         const needed = to.meta.right as string | undefined;

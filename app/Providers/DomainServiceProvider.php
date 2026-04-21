@@ -13,6 +13,7 @@ use App\Services\Emails\EmailRenderService;
 use App\Services\Emails\EmailSendService;
 use App\Services\Emails\EmailTemplateService;
 use App\Services\Export\ExportService;
+use App\Services\Manager\ManagerDashboardService;
 use App\Services\Midigator\AuthService as MidigatorAuthService;
 use App\Services\Midigator\EventSubscriptionService as MidigatorEventSubscriptionService;
 use App\Services\Midigator\MidigatorClient;
@@ -65,6 +66,8 @@ class DomainServiceProvider extends ServiceProvider
         ActivityLogService::class,
         SearchService::class,
         ExportService::class,
+        // Manager dashboard
+        ManagerDashboardService::class,
         // Platform (superadmin)
         PlatformTenantService::class,
         PlatformOverviewService::class,

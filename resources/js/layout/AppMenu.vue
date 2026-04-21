@@ -77,6 +77,51 @@ const tenantMenu: MenuItem[] = [
     },
 ];
 
+const managerMenu: MenuItem[] = [
+    {
+        label: 'Home',
+        items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/manager' }],
+    },
+    {
+        label: 'Team',
+        items: [
+            { label: 'My team', icon: 'pi pi-fw pi-users', to: '/manager/team', right: 'managers.view_profiles' },
+            { label: 'Performance', icon: 'pi pi-fw pi-chart-bar', to: '/manager/performance', right: 'dashboard.manager_performance' },
+        ],
+    },
+    {
+        label: 'Workflows',
+        items: [
+            { label: 'Assignments', icon: 'pi pi-fw pi-inbox', to: '/manager/assignments', right: 'chargebacks.assign' },
+            { label: 'Approvals', icon: 'pi pi-fw pi-check-circle', to: '/manager/approvals', right: 'chargebacks.stage_change' },
+        ],
+    },
+    {
+        label: 'Cases',
+        items: [
+            { label: 'Chargebacks', icon: 'pi pi-fw pi-credit-card', to: '/chargebacks', right: 'chargebacks.view' },
+            { label: 'Preventions', icon: 'pi pi-fw pi-shield', to: '/preventions', right: 'preventions.view' },
+            { label: 'RDR Cases', icon: 'pi pi-fw pi-flag', to: '/rdr', right: 'rdr.view' },
+            { label: 'Orders', icon: 'pi pi-fw pi-shopping-cart', to: '/orders', right: 'orders.view' },
+        ],
+    },
+    {
+        label: 'Operations',
+        items: [
+            { label: 'Exports', icon: 'pi pi-fw pi-download', to: '/exports', right: 'export.run' },
+            { label: 'Search', icon: 'pi pi-fw pi-search', to: '/search' },
+            { label: 'Team activity', icon: 'pi pi-fw pi-list', to: '/manager/activity', right: 'activity_log.view_all' },
+        ],
+    },
+    {
+        label: 'Settings',
+        items: [
+            { label: 'Notifications', icon: 'pi pi-fw pi-bell', to: '/notifications' },
+            { label: 'Preferences', icon: 'pi pi-fw pi-cog', to: '/settings/preferences' },
+        ],
+    },
+];
+
 const platformMenu: MenuItem[] = [
     {
         label: 'Home',
@@ -109,8 +154,9 @@ const platformMenu: MenuItem[] = [
 ];
 
 const model = computed<MenuItem[]>(() => {
-    const isPlatformView = auth.user?.is_platform_admin && !auth.isImpersonating;
-    return isPlatformView ? platformMenu : filterMenu(tenantMenu);
+    if (auth.persona === 'platform') return platformMenu;
+    if (auth.persona === 'manager') return filterMenu(managerMenu);
+    return filterMenu(tenantMenu);
 });
 </script>
 

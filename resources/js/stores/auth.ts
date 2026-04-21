@@ -28,6 +28,23 @@ export const useAuthStore = defineStore('auth', () => {
     const isAuthenticated = computed(() => user.value !== null);
     const isImpersonating = computed(() => impersonator.value !== null);
 
+    const isPlatformAdmin = computed(() => !!user.value?.is_platform_admin && !isImpersonating.value);
+
+    function hasRole(slug: string): boolean {
+        return !!user.value?.roles?.some((r) => r.slug === slug);
+    }
+
+    const isManager = computed(() => {
+        if (!user.value || isPlatformAdmin.value) return false;
+        return hasRole('manager') && !hasRole('tenant-admin');
+    });
+
+    const persona = computed<'platform' | 'manager' | 'tenant'>(() => {
+        if (isPlatformAdmin.value) return 'platform';
+        if (isManager.value) return 'manager';
+        return 'tenant';
+    });
+
     function can(right: string): boolean {
         if (!user.value) return false;
         if (user.value.is_platform_admin) return true;
@@ -106,6 +123,10 @@ export const useAuthStore = defineStore('auth', () => {
         error,
         isAuthenticated,
         isImpersonating,
+        isPlatformAdmin,
+        isManager,
+        persona,
+        hasRole,
         can,
         login,
         loginWithPin,
