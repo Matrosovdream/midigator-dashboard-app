@@ -9,9 +9,24 @@ interface MenuItem {
     to?: string;
     separator?: boolean;
     items?: MenuItem[];
+    right?: string;
 }
 
 const auth = useAuthStore();
+
+function canSee(item: MenuItem): boolean {
+    if (!item.right) return true;
+    return auth.can(item.right);
+}
+
+function filterMenu(menu: MenuItem[]): MenuItem[] {
+    return menu
+        .map((group) => ({
+            ...group,
+            items: group.items?.filter(canSee),
+        }))
+        .filter((group) => !group.items || group.items.length > 0);
+}
 
 const tenantMenu: MenuItem[] = [
     {
@@ -19,8 +34,46 @@ const tenantMenu: MenuItem[] = [
         items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/dashboard' }],
     },
     {
-        label: 'Administration',
-        items: [{ label: 'Users', icon: 'pi pi-fw pi-users', to: '/users' }],
+        label: 'Cases',
+        items: [
+            { label: 'Orders', icon: 'pi pi-fw pi-shopping-cart', to: '/orders', right: 'orders.view' },
+            { label: 'Chargebacks', icon: 'pi pi-fw pi-credit-card', to: '/chargebacks', right: 'chargebacks.view' },
+            { label: 'Preventions', icon: 'pi pi-fw pi-shield', to: '/preventions', right: 'preventions.view' },
+            { label: 'RDR Cases', icon: 'pi pi-fw pi-flag', to: '/rdr', right: 'rdr.view' },
+        ],
+    },
+    {
+        label: 'Operations',
+        items: [
+            { label: 'Validations', icon: 'pi pi-fw pi-check-square', to: '/validations', right: 'order_validations.view' },
+            { label: 'Exports', icon: 'pi pi-fw pi-download', to: '/exports', right: 'export.run' },
+            { label: 'Search', icon: 'pi pi-fw pi-search', to: '/search' },
+        ],
+    },
+    {
+        label: 'Team',
+        items: [
+            { label: 'Users', icon: 'pi pi-fw pi-users', to: '/team/users', right: 'users.view' },
+            { label: 'Managers', icon: 'pi pi-fw pi-user', to: '/team/managers', right: 'dashboard.manager_performance' },
+            { label: 'Roles & Rights', icon: 'pi pi-fw pi-key', to: '/team/roles' },
+        ],
+    },
+    {
+        label: 'Communications',
+        items: [
+            { label: 'Email Templates', icon: 'pi pi-fw pi-envelope', to: '/comms/templates', right: 'emails.view' },
+            { label: 'Notifications', icon: 'pi pi-fw pi-bell', to: '/notifications' },
+            { label: 'Notification Settings', icon: 'pi pi-fw pi-sliders-h', to: '/notifications/settings' },
+        ],
+    },
+    {
+        label: 'Settings',
+        items: [
+            { label: 'Tenant Profile', icon: 'pi pi-fw pi-building', to: '/settings/profile' },
+            { label: 'Integrations', icon: 'pi pi-fw pi-link', to: '/settings/integrations' },
+            { label: 'Activity Log', icon: 'pi pi-fw pi-list', to: '/settings/activity', right: 'activity_log.view' },
+            { label: 'Preferences', icon: 'pi pi-fw pi-cog', to: '/settings/preferences' },
+        ],
     },
 ];
 
@@ -55,7 +108,10 @@ const platformMenu: MenuItem[] = [
     },
 ];
 
-const model = computed<MenuItem[]>(() => (auth.user?.is_platform_admin ? platformMenu : tenantMenu));
+const model = computed<MenuItem[]>(() => {
+    const isPlatformView = auth.user?.is_platform_admin && !auth.isImpersonating;
+    return isPlatformView ? platformMenu : filterMenu(tenantMenu);
+});
 </script>
 
 <template>
