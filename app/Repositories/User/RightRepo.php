@@ -17,6 +17,17 @@ class RightRepo extends AbstractRepo
         return $this->getAll(['group' => $group], 200, ['slug' => 'asc']);
     }
 
+    public function getAllWithRoleCount(): array
+    {
+        $items = $this->model
+            ->withCount('roles')
+            ->orderBy('group', 'asc')
+            ->orderBy('slug', 'asc')
+            ->get();
+
+        return $items->map(fn ($i) => $this->mapItem($i))->all();
+    }
+
     public function getBySlugs(array $slugs)
     {
         $items = $this->model
@@ -38,6 +49,7 @@ class RightRepo extends AbstractRepo
             'slug' => $item->slug,
             'group' => $item->group,
             'description' => $item->description,
+            'roles_count' => $item->roles_count ?? null,
             'Model' => $item,
         ];
     }

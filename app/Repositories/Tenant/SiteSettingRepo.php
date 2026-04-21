@@ -31,6 +31,28 @@ class SiteSettingRepo extends AbstractRepo
         );
     }
 
+    public function getPlatformGrouped(): array
+    {
+        $items = $this->model
+            ->whereNull('tenant_id')
+            ->orderBy('group', 'asc')
+            ->orderBy('key', 'asc')
+            ->get()
+            ->map(fn ($i) => $this->mapItem($i))
+            ->all();
+
+        $groups = [];
+        foreach ($items as $item) {
+            $g = $item['group'] ?? 'general';
+            if (!isset($groups[$g])) {
+                $groups[$g] = ['name' => $g, 'settings' => []];
+            }
+            unset($item['Model']);
+            $groups[$g]['settings'][] = $item;
+        }
+        return array_values($groups);
+    }
+
     public function setValue(?int $tenantId, string $key, mixed $value, string $type = 'string', string $group = 'general'): array
     {
         $stored = is_array($value) || is_object($value) ? json_encode($value) : (string) $value;

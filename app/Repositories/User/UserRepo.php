@@ -9,6 +9,27 @@ class UserRepo extends AbstractRepo
 {
     protected $withRelations = ['roles', 'managerProfile'];
 
+    public function getAllWithTenant($filter = [], $paginate = 20, array $sorting = [])
+    {
+        $search = $filter['search'] ?? null;
+        unset($filter['search']);
+
+        $query = $this->model->with(array_merge($this->withRelations, ['tenant']));
+        $query = $this->applyFilter($query, $filter);
+
+        if (!empty($search)) {
+            $like = '%'.$search.'%';
+            $query->where(function ($q) use ($like) {
+                $q->where('name', 'LIKE', $like)
+                    ->orWhere('email', 'LIKE', $like);
+            });
+        }
+
+        $query = $this->applySorting($query, $sorting);
+
+        return $this->mapItems($query->paginate($paginate));
+    }
+
     public function __construct()
     {
         $this->model = new User();
@@ -52,6 +73,9 @@ class UserRepo extends AbstractRepo
         return [
             'id' => $item->id,
             'tenant_id' => $item->tenant_id,
+            'tenant' => $item->relationLoaded('tenant') && $item->tenant
+                ? ['id' => $item->tenant->id, 'name' => $item->tenant->name, 'slug' => $item->tenant->slug]
+                : null,
             'email' => $item->email,
             'name' => $item->name,
             'avatar' => $item->avatar,

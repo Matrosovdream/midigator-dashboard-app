@@ -45,6 +45,17 @@ use App\Services\Midigator\OrderService as MidigatorOrderService;
 use App\Services\Midigator\PreventionService as MidigatorPreventionService;
 use App\Services\Midigator\WebhookProcessor;
 use App\Services\Notifications\NotificationService;
+use App\Services\Platform\ActivityLogService as PlatformActivityLogService;
+use App\Services\Platform\EmailLogService as PlatformEmailLogService;
+use App\Services\Platform\EmailTemplateService as PlatformEmailTemplateService;
+use App\Services\Platform\ImpersonationService;
+use App\Services\Platform\IntegrationHealthService;
+use App\Services\Platform\OverviewService as PlatformOverviewService;
+use App\Services\Platform\RightsCatalogService;
+use App\Services\Platform\SettingsService as PlatformSettingsService;
+use App\Services\Platform\TenantService as PlatformTenantService;
+use App\Services\Platform\UserService as PlatformUserService;
+use App\Services\Platform\WebhookLogService as PlatformWebhookLogService;
 use App\Services\Search\SearchService;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
@@ -112,6 +123,18 @@ class AppServiceProvider extends ServiceProvider
         ActivityLogService::class,
         SearchService::class,
         ExportService::class,
+        // Platform (superadmin)
+        PlatformTenantService::class,
+        PlatformOverviewService::class,
+        PlatformUserService::class,
+        PlatformWebhookLogService::class,
+        IntegrationHealthService::class,
+        RightsCatalogService::class,
+        PlatformActivityLogService::class,
+        PlatformEmailLogService::class,
+        PlatformEmailTemplateService::class,
+        PlatformSettingsService::class,
+        ImpersonationService::class,
     ];
 
     public function register(): void

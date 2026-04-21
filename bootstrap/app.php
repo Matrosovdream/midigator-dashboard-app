@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Middleware\CheckRight;
+use App\Http\Middleware\EnsurePlatformAdmin;
 use App\Http\Middleware\EnsureTenantScope;
 use App\Http\Middleware\ValidateMidigatorWebhookAuth;
 use Illuminate\Foundation\Application;
@@ -26,6 +27,7 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'right' => CheckRight::class,
             'tenant.scope' => EnsureTenantScope::class,
+            'platform.admin' => EnsurePlatformAdmin::class,
             'midigator.webhook.auth' => ValidateMidigatorWebhookAuth::class,
         ]);
     })

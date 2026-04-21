@@ -27,6 +27,52 @@ class WebhookLogRepo extends AbstractRepo
         );
     }
 
+    public function getAllCrossTenant(array $filter = [], int $perPage = 25): array
+    {
+        $query = $this->model->with('tenant');
+        $query = $this->applyFilter($query, $filter);
+        $query->orderBy('created_at', 'desc');
+
+        return $this->mapItems($query->paginate($perPage));
+    }
+
+    public function getTenantHealthMatrix(\DateTimeInterface $since): array
+    {
+        $rows = $this->model
+            ->selectRaw('tenant_id,
+                COUNT(*) as total,
+                SUM(CASE WHEN status = ? THEN 1 ELSE 0 END) as failed,
+                MAX(CASE WHEN status = ? THEN created_at END) as last_success_at,
+                MAX(CASE WHEN status = ? THEN created_at END) as last_failure_at',
+                ['failed', 'processed', 'failed'],
+            )
+            ->where('created_at', '>=', $since)
+            ->groupBy('tenant_id')
+            ->get();
+
+        return $rows->map(fn ($r) => [
+            'tenant_id' => (int) $r->tenant_id,
+            'total' => (int) $r->total,
+            'failed' => (int) $r->failed,
+            'last_success_at' => $r->last_success_at,
+            'last_failure_at' => $r->last_failure_at,
+        ])->keyBy('tenant_id')->toArray();
+    }
+
+    public function getRecentFailed(int $limit = 10): array
+    {
+        $items = $this->model
+            ->where('status', 'failed')
+            ->with('tenant')
+            ->orderBy('created_at', 'desc')
+            ->limit($limit)
+            ->get()
+            ->map(fn ($item) => $this->mapItem($item))
+            ->toArray();
+
+        return $items;
+    }
+
     public function markProcessed(int $id): ?array
     {
         return $this->update($id, [
@@ -52,6 +98,9 @@ class WebhookLogRepo extends AbstractRepo
         return [
             'id' => $item->id,
             'tenant_id' => $item->tenant_id,
+            'tenant' => $item->relationLoaded('tenant') && $item->tenant
+                ? ['id' => $item->tenant->id, 'name' => $item->tenant->name]
+                : null,
             'event_type' => $item->event_type,
             'event_guid' => $item->event_guid,
             'status' => $item->status,
