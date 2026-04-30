@@ -5,15 +5,20 @@ services:
       dockerfile: ./docker/production/nginx/Dockerfile
     restart: unless-stopped
     volumes:
-      - example-storage-production:/var/www/storage:ro
-      - example-public-assets:/var/www/public/build:ro
+      - midigator-storage-production:/var/www/storage:ro
+      - midigator-public-assets:/var/www/public/build:ro
     networks:
-      - example-production
-    ports:
-      - "${NGINX_PORT:-8080}:80"
+      - midigator-production
+      - traefik-network
     depends_on:
       php-fpm:
         condition: service_healthy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.midigator.rule=Host(`midigator.devflip.io`)"
+      - "traefik.http.routers.midigator.entrypoints=websecure"
+      - "traefik.http.routers.midigator.tls.certresolver=letsencrypt"
+      - "traefik.http.services.midigator.loadbalancer.server.port=80"
 
   php-fpm:
     build:
@@ -22,12 +27,12 @@ services:
       target: production
     restart: unless-stopped
     volumes:
-      - example-public-assets:/var/www/public/build
-      - example-storage-production:/var/www/storage
+      - midigator-public-assets:/var/www/public/build
+      - midigator-storage-production:/var/www/storage
     env_file:
       - .env
     networks:
-      - example-production
+      - midigator-production
     healthcheck:
       test: ["CMD-SHELL", "php-fpm-healthcheck || exit 1"]
       interval: 10s
@@ -46,11 +51,11 @@ services:
       target: production
     restart: unless-stopped
     volumes:
-      - example-storage-production:/var/www/storage
+      - midigator-storage-production:/var/www/storage
     env_file:
       - .env
     networks:
-      - example-production
+      - midigator-production
     depends_on:
       php-fpm:
         condition: service_healthy
@@ -75,9 +80,7 @@ services:
     env_file:
       - .env
     networks:
-      - example-production
-    ports:
-      - "${REVERB_PORT:-9090}:8080"
+      - midigator-production
     depends_on:
       redis:
         condition: service_healthy
@@ -94,7 +97,7 @@ services:
     volumes:
       - meilisearch-data-production:/meili_data
     networks:
-      - example-production
+      - midigator-production
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:7700/health"]
       interval: 10s
@@ -108,11 +111,11 @@ services:
       target: production
     restart: unless-stopped
     volumes:
-      - example-storage-production:/var/www/storage
+      - midigator-storage-production:/var/www/storage
     env_file:
       - .env
     networks:
-      - example-production
+      - midigator-production
     depends_on:
       php-fpm:
         condition: service_healthy
@@ -123,16 +126,14 @@ services:
     image: postgres:16
     restart: unless-stopped
     user: postgres
-    ports:
-      - "${POSTGRES_PORT:-5432}:5432"
     environment:
-      - POSTGRES_DB=${DB_DATABASE:-example}
-      - POSTGRES_USER=${DB_USERNAME:-example}
+      - POSTGRES_DB=${DB_DATABASE:-midigator}
+      - POSTGRES_USER=${DB_USERNAME:-midigator}
       - POSTGRES_PASSWORD=${DB_PASSWORD:-secret}
     volumes:
       - postgres-data-production:/var/lib/postgresql/data
     networks:
-      - example-production
+      - midigator-production
     healthcheck:
       test: ["CMD", "pg_isready"]
       interval: 10s
@@ -143,7 +144,7 @@ services:
     image: redis:alpine
     restart: unless-stopped
     networks:
-      - example-production
+      - midigator-production
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
@@ -151,10 +152,14 @@ services:
       retries: 3
 
 networks:
-  example-production:
+  midigator-production:
+    driver: bridge
+  traefik-network:
+    external: true
+
 
 volumes:
   postgres-data-production:
-  example-storage-production:
-  example-public-assets:
+  midigator-storage-production:
+  midigator-public-assets:
   meilisearch-data-production:
